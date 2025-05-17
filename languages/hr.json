@@ -1,1 +1,31 @@
-{"header-name": "Marko Varga", "header-title": "Student 3. godine FER-a - Računarstvo", "nav-home": "Početna", "nav-about": "O Meni", "nav-skills": "Vještine", "nav-education": "Obrazovanje", "nav-experience": "Iskustvo", "nav-contact": "Kontakt", "about-title": "O Meni", "about-text": "Student sam treće godine FER-a...", "skills-title": "Vještine", "skills-list": ["Git/Github", "Linux", "Python", "Java", "C/C++", "JavaScript"], "education-title": "Obrazovanje", "education-list": ["FER - Računarstvo (2021 - danas)", "Prva gimnazija Varaždin - Prirodoslovno-matematička (2017 - 2021)"], "experience-title": "Iskustvo", "experience-list": ["Demonstrator na UPRO, FER (10.2023 - 1.2024)", "Demonstrator na Digitalna logika, FER (10.2021 - 1.2022)"]}
+{
+    "header-name": "Marko Varga",
+    "header-title": "Student 3. godine FER-a - Računarstvo",
+    "nav-home": "Početna",
+    "nav-about": "O Meni",
+    "nav-skills": "Vještine",
+    "nav-education": "Obrazovanje",
+    "nav-experience": "Iskustvo",
+    "nav-contact": "Kontakt",
+    "about-title": "O Meni",
+    "about-text": "Student sam treće godine FER-a...",
+    "skills-title": "Vještine",
+    "skills-list": [
+        "Git/Github",
+        "Linux",
+        "Python",
+        "Java",
+        "C/C++",
+        "JavaScript"
+    ],
+    "education-title": "Obrazovanje",
+    "education-list": [
+        "FER - Računarstvo (2021 - danas)",
+        "Prva gimnazija Varaždin - Prirodoslovno-matematička (2017 - 2021)"
+    ],
+    "experience-title": "Iskustvo",
+    "experience-list": [
+        "Demonstrator na UPRO, FER (10.2023 - 1.2024)",
+        "Demonstrator na Digitalna logika, FER (10.2021 - 1.2022)"
+    ]
+}
