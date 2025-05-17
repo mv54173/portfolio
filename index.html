@@ -1,172 +1,54 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Marko Varga - Personal Portfolio</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marko Varga - Personal Portfolio</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "Montserrat", sans-serif
-        }
-
-        .w3-sidebar {
-            width: 200px;
-            background: linear-gradient(180deg, #0f0f0f, #2d2d2d);
-        }
-
-        .w3-bar-item {
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .w3-bar-item:hover {
-            background: #444 !important;
-            color: #fff !important;
-        }
-
-        .w3-padding-large {
-            padding: 32px 16px !important;
-        }
-
-        .w3-jumbo {
-            font-size: 4em !important;
-            color: #f7f7f7;
-        }
-
-        .w3-wide {
-            letter-spacing: 4px;
-            color: #f7f7f7;
-        }
-
-        .w3-opacity {
-            opacity: 0.7 !important;
-        }
-
-        .w3-dark-grey {
-            background-color: #444 !important;
-        }
-
-        .w3-content {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .skill-bar {
-            background-color: #ddd;
-            margin-bottom: 12px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .skill-level {
-            background-color: #444;
-            height: 28px;
-            text-align: right;
-            padding-right: 10px;
-            color: #fff;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="w3-black">
-
-    <!-- Sidebar -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-center">
-        <img src="https://via.placeholder.com/200" style="width:100%;border-radius:50%;margin:16px 0;">
-        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
-            <i class="fa fa-home w3-xxlarge"></i>
-            <p>HOME</p>
-        </a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-user w3-xxlarge"></i>
-            <p>ABOUT</p>
-        </a>
-        <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-cogs w3-xxlarge"></i>
-            <p>SKILLS</p>
-        </a>
-        <a href="#education" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-graduation-cap w3-xxlarge"></i>
-            <p>EDUCATION</p>
-        </a>
-        <a href="#experience" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-briefcase w3-xxlarge"></i>
-            <p>EXPERIENCE</p>
-        </a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-envelope w3-xxlarge"></i>
-            <p>CONTACT</p>
-        </a>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="w3-padding-large" id="main">
-        <!-- Header -->
-        <header class="w3-container w3-center" id="home"
-            style="background: url('https://via.placeholder.com/1500x500') center center / cover; height: 500px;">
-            <div style="background-color: rgba(0,0,0,0.7); padding: 100px 20px;">
-                <h1 class="w3-jumbo">Marko Varga</h1>
-                <p class="w3-wide">Student 3. god. FER-a - Računarstvo</p>
-            </div>
-        </header>
-
-        <!-- About Section -->
-        <div class="w3-content w3-justify w3-padding-64" id="about">
-            <h2>About Me</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p>Student sam treće godine FER-a (smjera Računarstvo) i do sad sam na fakultetu postigao odličan uspjeh.
-                Dolazim iz Međimurja, a rodom sam Slovenac i Hrvat. Marljiv sam i snalažljiv, te rado učim koristiti
-                nove tehnologije. Smatram se prijateljski nastrojenom i otvorenom osobom. Dobro se snalazim u timskom
-                radu i često preuzimam inicijativu. Tražim svoj prvi studentski posao ili praksu u industriji jer bih
-                svoje akademsko znanje volio proširiti konkretnim iskustvom.</p>
+<a href="#" id="lang-switch" class="lang-switch">Hrvatski</a>
+<nav class="w3-sidebar w3-bar-block w3-small w3-center">
+    <img src="images/avatar.png" style="width:100%;border-radius:50%;margin:16px 0;">
+    <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black" id="nav-home"></a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="nav-about"></a>
+    <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="nav-skills"></a>
+    <a href="#education" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="nav-education"></a>
+    <a href="#experience" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="nav-experience"></a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black" id="nav-contact"></a>
+</nav>
+<div class="w3-padding-large" id="main">
+    <header class="w3-container w3-center" id="home" style="background: url('images/header.jpg') center center / cover; height: 500px;">
+        <div style="background-color: rgba(0,0,0,0.7); padding: 100px 20px;">
+            <h1 class="w3-jumbo" id="header-name"></h1>
+            <p class="w3-wide" id="header-title"></p>
         </div>
-
-        <!-- Skills Section -->
-        <div class="w3-content w3-padding-64" id="skills">
-            <h2>Skills</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <div class="skill-bar">
-                <div class="skill-level" style="width: 90%;">Git/Github</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width: 85%;">Linux</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width: 80%;">Python</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width: 75%;">Java</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width: 70%;">C/C++</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width: 60%;">JavaScript</div>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="w3-content w3-justify w3-padding-64" id="contact">
-            <h2>Contact Me</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> +385 99 791 7970</p>
-            <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> marko.varga@fer.hr</p>
-            <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a
-                    href="https://github.com/mv54173" target="_blank">github.com/mv54173</a></p>
-        </div>
-
+    </header>
+    <div class="w3-content w3-justify w3-padding-64" id="about">
+        <h2 id="about-title"></h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p id="about-text"></p>
     </div>
-
+    <div class="w3-content w3-padding-64" id="skills">
+        <h2 id="skills-title"></h2>
+        <hr style="width:200px" class="w3-opacity">
+        <div class="skill-bar"><div class="skill-level" style="width: 90%;" id="skill-git"></div></div>
+        <div class="skill-bar"><div class="skill-level" style="width: 85%;" id="skill-linux"></div></div>
+        <div class="skill-bar"><div class="skill-level" style="width: 80%;" id="skill-python"></div></div>
+        <div class="skill-bar"><div class="skill-level" style="width: 75%;" id="skill-java"></div></div>
+        <div class="skill-bar"><div class="skill-level" style="width: 70%;" id="skill-cpp"></div></div>
+        <div class="skill-bar"><div class="skill-level" style="width: 60%;" id="skill-js"></div></div>
+    </div>
+    <div class="w3-content w3-justify w3-padding-64" id="contact">
+        <h2 id="contact-title"></h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> +385 99 791 7970</p>
+        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> marko.varga@fer.hr</p>
+        <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a href="https://github.com/mv54173" target="_blank">github.com/mv54173</a></p>
+    </div>
+</div>
+<script src="language.js"></script>
 </body>
-
 </html>

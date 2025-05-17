@@ -1,0 +1,8 @@
+.w3-sidebar {width: 200px; background: linear-gradient(180deg, #0f0f0f, #2d2d2d);}
+.w3-bar-item {transition: background 0.3s, color 0.3s;}
+.w3-bar-item:hover {background: #444 !important;color: #fff !important;}
+.w3-padding-large {padding: 32px 16px !important;}
+.w3-jumbo {font-size: 4em !important;color: #f7f7f7;}
+.w3-wide {letter-spacing: 4px;color: #f7f7f7;}
+.skill-bar {background-color: #ddd; margin-bottom: 12px; border-radius: 10px; overflow: hidden;}
+.skill-level {background-color: #444; height: 28px; text-align: right; padding-right: 10px; color: #fff; border-radius: 10px;}
