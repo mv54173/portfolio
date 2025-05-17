@@ -19,23 +19,61 @@
             font-family: "Montserrat", sans-serif
         }
 
-        .w3-row-padding img {
-            margin-bottom: 12px
-        }
-
         .w3-sidebar {
-            width: 120px;
-            background: #222;
+            width: 200px;
+            background: linear-gradient(180deg, #0f0f0f, #2d2d2d);
         }
 
-        #main {
-            margin-left: 120px
+        .w3-bar-item {
+            transition: background 0.3s, color 0.3s;
         }
 
-        @media only screen and (max-width: 600px) {
-            #main {
-                margin-left: 0
-            }
+        .w3-bar-item:hover {
+            background: #444 !important;
+            color: #fff !important;
+        }
+
+        .w3-padding-large {
+            padding: 32px 16px !important;
+        }
+
+        .w3-jumbo {
+            font-size: 4em !important;
+            color: #f7f7f7;
+        }
+
+        .w3-wide {
+            letter-spacing: 4px;
+            color: #f7f7f7;
+        }
+
+        .w3-opacity {
+            opacity: 0.7 !important;
+        }
+
+        .w3-dark-grey {
+            background-color: #444 !important;
+        }
+
+        .w3-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .skill-bar {
+            background-color: #ddd;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            background-color: #444;
+            height: 28px;
+            text-align: right;
+            padding-right: 10px;
+            color: #fff;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -43,8 +81,8 @@
 <body class="w3-black">
 
     <!-- Sidebar -->
-    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <img src="/w3images/avatar_smoke.jpg" style="width:100%">
+    <nav class="w3-sidebar w3-bar-block w3-small w3-center">
+        <img src="https://via.placeholder.com/200" style="width:100%;border-radius:50%;margin:16px 0;">
         <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
             <i class="fa fa-home w3-xxlarge"></i>
             <p>HOME</p>
@@ -74,14 +112,16 @@
     <!-- Main Content -->
     <div class="w3-padding-large" id="main">
         <!-- Header -->
-        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-            <h1 class="w3-jumbo">Marko Varga</h1>
-            <p>Student 3. god. FER-a - Računarstvo</p>
-            <img src="/w3images/man_smoke.jpg" alt="Marko Varga" class="w3-image" width="992" height="1108">
+        <header class="w3-container w3-center" id="home"
+            style="background: url('https://via.placeholder.com/1500x500') center center / cover; height: 500px;">
+            <div style="background-color: rgba(0,0,0,0.7); padding: 100px 20px;">
+                <h1 class="w3-jumbo">Marko Varga</h1>
+                <p class="w3-wide">Student 3. god. FER-a - Računarstvo</p>
+            </div>
         </header>
 
         <!-- About Section -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <div class="w3-content w3-justify w3-padding-64" id="about">
             <h2>About Me</h2>
             <hr style="width:200px" class="w3-opacity">
             <p>Student sam treće godine FER-a (smjera Računarstvo) i do sad sam na fakultetu postigao odličan uspjeh.
@@ -92,55 +132,31 @@
         </div>
 
         <!-- Skills Section -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="skills">
+        <div class="w3-content w3-padding-64" id="skills">
             <h2>Skills</h2>
             <hr style="width:200px" class="w3-opacity">
-            <p class="w3-wide">Git/Github</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 90%;">Git/Github</div>
             </div>
-            <p class="w3-wide">Linux</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 85%;">Linux</div>
             </div>
-            <p class="w3-wide">Python</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;">Python</div>
             </div>
-            <p class="w3-wide">Java</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 75%;">Java</div>
             </div>
-            <p class="w3-wide">C/C++</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 70%;">C/C++</div>
             </div>
-            <p class="w3-wide">JavaScript</p>
-            <div class="w3-white">
-                <div class="w3-dark-grey" style="height:28px;width:60%"></div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 60%;">JavaScript</div>
             </div>
-        </div>
-
-        <!-- Education Section -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="education">
-            <h2>Education</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p>Fakultet elektrotehnike i računarstva (FER) - Računarstvo, 2021 - present</p>
-            <p>Prva gimnazija Varaždin - Prirodoslovno-matematička gimnazija, 2017 - 2021</p>
-        </div>
-
-        <!-- Experience Section -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="experience">
-            <h2>Experience</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <ul>
-                <li>Demonstrator na predmetu UPRO FER, Sveučilište u Zagrebu (10.2023. – 1.2024.)</li>
-                <li>Demonstrator na predmetu Digitalna logika FER, Sveučilište u Zagrebu (10.2021. – 1.2022.)</li>
-            </ul>
         </div>
 
         <!-- Contact Section -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="contact">
+        <div class="w3-content w3-justify w3-padding-64" id="contact">
             <h2>Contact Me</h2>
             <hr style="width:200px" class="w3-opacity">
             <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> +385 99 791 7970</p>
