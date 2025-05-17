@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Marko Varga - Personal Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px
+        }
+
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        #main {
+            margin-left: 120px
+        }
+
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0
+            }
+        }
+    </style>
+</head>
+
+<body class="w3-black">
+
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <img src="/w3images/avatar_smoke.jpg" style="width:100%">
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+        <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-cogs w3-xxlarge"></i>
+            <p>SKILLS</p>
+        </a>
+        <a href="#education" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-graduation-cap w3-xxlarge"></i>
+            <p>EDUCATION</p>
+        </a>
+        <a href="#experience" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-briefcase w3-xxlarge"></i>
+            <p>EXPERIENCE</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="w3-padding-large" id="main">
+        <!-- Header -->
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo">Marko Varga</h1>
+            <p>Student 3. god. FER-a - Računarstvo</p>
+            <img src="/w3images/man_smoke.jpg" alt="Marko Varga" class="w3-image" width="992" height="1108">
+        </header>
+
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2>About Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>Student sam treće godine FER-a (smjera Računarstvo) i do sad sam na fakultetu postigao odličan uspjeh.
+                Dolazim iz Međimurja, a rodom sam Slovenac i Hrvat. Marljiv sam i snalažljiv, te rado učim koristiti
+                nove tehnologije. Smatram se prijateljski nastrojenom i otvorenom osobom. Dobro se snalazim u timskom
+                radu i često preuzimam inicijativu. Tražim svoj prvi studentski posao ili praksu u industriji jer bih
+                svoje akademsko znanje volio proširiti konkretnim iskustvom.</p>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="skills">
+            <h2>Skills</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p class="w3-wide">Git/Github</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+            </div>
+            <p class="w3-wide">Linux</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:85%"></div>
+            </div>
+            <p class="w3-wide">Python</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:80%"></div>
+            </div>
+            <p class="w3-wide">Java</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+            </div>
+            <p class="w3-wide">C/C++</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+            </div>
+            <p class="w3-wide">JavaScript</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:60%"></div>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="education">
+            <h2>Education</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>Fakultet elektrotehnike i računarstva (FER) - Računarstvo, 2021 - present</p>
+            <p>Prva gimnazija Varaždin - Prirodoslovno-matematička gimnazija, 2017 - 2021</p>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="experience">
+            <h2>Experience</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <ul>
+                <li>Demonstrator na predmetu UPRO FER, Sveučilište u Zagrebu (10.2023. – 1.2024.)</li>
+                <li>Demonstrator na predmetu Digitalna logika FER, Sveučilište u Zagrebu (10.2021. – 1.2022.)</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="contact">
+            <h2>Contact Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> +385 99 791 7970</p>
+            <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> marko.varga@fer.hr</p>
+            <p><i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a
+                    href="https://github.com/mv54173" target="_blank">github.com/mv54173</a></p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
