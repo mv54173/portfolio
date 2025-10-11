@@ -378,11 +378,11 @@
         }
 
         .project-card {
-            min-width: 350px;
-            height: 300px;
+            min-width: 300px;
+            height: 280px;
             background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             border-radius: 15px;
-            padding: 30px;
+            padding: 25px;
             border: 2px solid #333;
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0.4;
@@ -408,15 +408,15 @@
         }
 
         .project-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 12px;
             color: #fff;
         }
 
         .project-card p {
-            font-size: 14px;
+            font-size: 13px;
             color: #aaa;
-            line-height: 1.6;
+            line-height: 1.5;
             flex-grow: 1;
         }
 
@@ -426,13 +426,13 @@
             gap: 8px;
             color: #fff;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             transition: all 0.3s;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         .project-link:hover {
@@ -474,8 +474,8 @@
 
         @media only screen and (max-width: 900px) {
             .project-card {
-                min-width: 280px;
-                height: 350px;
+                min-width: 250px;
+                height: 320px;
             }
 
             .carousel-arrow {
@@ -1089,7 +1089,7 @@
         }
 
         function updateCarouselPosition() {
-            const cardWidth = 380; // 350px + 30px gap
+            const cardWidth = 330; // 300px + 30px gap
             const offset = -cardWidth; // Center the middle card
             track.style.transform = `translateX(calc(-50% + ${offset}px))`;
         }
@@ -1121,7 +1121,7 @@
 
             if (direction === 1) {
                 // Moving right - shift left
-                const cardWidth = 380;
+                const cardWidth = 330;
                 const newOffset = -cardWidth * 2;
                 track.style.transform = `translateX(calc(-50% + ${newOffset}px))`;
             } else {
