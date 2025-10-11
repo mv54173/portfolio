@@ -1,93 +1,353 @@
 <!DOCTYPE html>
-<html>
-<title>Marko Varga - portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "Montserrat", sans-serif
-    }
+<html lang="hr">
 
-    .w3-row-padding img {
-        margin-bottom: 12px
-    }
-
-    /* Set the width of the sidebar to 120px */
-    .w3-sidebar {
-        width: 120px;
-        background: #222;
-    }
-
-    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-    #main {
-        margin-left: 120px
-    }
-
-    /* Remove margins from "page content" on small screens */
-    @media only screen and (max-width: 600px) {
-        #main {
-            margin-left: 0
+<head>
+    <title>Marko Varga - portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Montserrat", sans-serif;
         }
-    }
-</style>
+
+        .w3-row-padding img {
+            margin-bottom: 12px;
+        }
+
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+        }
+
+        #main {
+            margin-left: 120px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #main {
+                margin-left: 0;
+            }
+        }
+
+        .skill-bar {
+            background-color: #333;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 32px;
+        }
+
+        .skill-level {
+            background: linear-gradient(90deg, #666, #999);
+            height: 32px;
+            line-height: 32px;
+            padding-left: 12px;
+            color: #fff;
+            font-size: 14px;
+            transition: width 0.3s;
+        }
+
+        .timeline-item {
+            border-left: 2px solid #666;
+            padding-left: 20px;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #999;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 5px;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .contact-info i {
+            margin-right: 12px;
+            color: #999;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #333;
+            padding: 6px 12px;
+            margin: 4px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        .lang-switch:hover {
+            background: #555;
+        }
+    </style>
+</head>
 
 <body class="w3-black">
 
-    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <!-- Language Switch Button -->
+    <button id="lang-switch" class="lang-switch">EN / HR</button>
+
+    <!-- Sidebar -->
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
         <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
             <i class="fa fa-home w3-xxlarge"></i>
-            <p>POČETNA</p>
+            <p id="nav-home">POČETNA</p>
         </a>
         <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
             <i class="fa fa-user w3-xxlarge"></i>
-            <p>O MENI</p>
+            <p id="nav-about">O MENI</p>
         </a>
-        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-            <i class="fa fa-diagram-project w3-xxlarge"></i>
-            <p>PROJEKTI</p>
+        <a href="#skills" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-code w3-xxlarge"></i>
+            <p id="nav-skills">VJEŠTINE</p>
+        </a>
+        <a href="#education" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-graduation-cap w3-xxlarge"></i>
+            <p id="nav-education">OBRAZOVANJE</p>
+        </a>
+        <a href="#experience" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-briefcase w3-xxlarge"></i>
+            <p id="nav-experience">ISKUSTVO</p>
         </a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
             <i class="fa fa-envelope w3-xxlarge"></i>
-            <p>KONTAKT</p>
+            <p id="nav-contact">KONTAKT</p>
         </a>
     </nav>
-    < <!-- Navbar on small screens (Hidden on medium and large screens) -->
-        <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-            <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-                <a href="#" class="w3-bar-item w3-button" style="width:25% !important">POČETNA</a>
-                <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">O MENI</a>
-                <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJEKTI</a>
-                <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">KONTAKT</a>
+
+    <!-- Mobile navbar -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#" class="w3-bar-item w3-button" style="width:16.66% !important" id="nav-home-mobile">POČETNA</a>
+            <a href="#about" class="w3-bar-item w3-button" style="width:16.66% !important" id="nav-about-mobile">O
+                MENI</a>
+            <a href="#skills" class="w3-bar-item w3-button" style="width:16.66% !important"
+                id="nav-skills-mobile">VJEŠTINE</a>
+            <a href="#education" class="w3-bar-item w3-button" style="width:16.66% !important"
+                id="nav-education-mobile">OBRAZOVANJE</a>
+            <a href="#experience" class="w3-bar-item w3-button" style="width:16.66% !important"
+                id="nav-experience-mobile">ISKUSTVO</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:16.66% !important"
+                id="nav-contact-mobile">KONTAKT</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+
+        <!-- Header -->
+        <header class="w3-container w3-padding-32 w3-black" id="home"
+            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
+            <div>
+                <h1 class="w3-jumbo"><span class="w3-hide-small">Marko </span>Varga</h1>
+                <p class="w3-large" id="header-subtitle">Student 4. godine FER-a</p>
+                <p id="header-description">Računarstvo | Programiranje | Backend razvoj</p>
+            </div>
+            <img src="./images/banner.png" alt="Marko Varga" class="w3-image"
+                style="max-width: 300px; border-radius: 20px;">
+        </header>
+
+        <!-- About -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey" id="about-title">O Meni</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p id="about-text-1">Student sam prve godine diplomskog studija na FER-u gdje sam preddiplomski studij
+                završio s odličnim uspjehom i velikom pohvalom (magna cum laude). Dolazim iz Međimurja, a rano sam
+                djetinjstvo proveo u Sloveniji gdje sam rođen.</p>
+            <p id="about-text-2">Marljiv sam i snalažljiv te se smatram prijateljski nastrojenom i otvorenom osobom.
+                Stalno sam u potrazi za novim izazovima i rado prihvaćam pružene prilike.</p>
+
+            <h3 class="w3-padding-16 w3-text-light-grey" id="languages-title">Jezici</h3>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:95%" id="lang-english">Engleski - C1</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:80%" id="lang-slovenian">Slovenski - B2</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:70%" id="lang-german">Njemački - B1</div>
             </div>
         </div>
 
-        <!-- Page Content -->
-        <div class="w3-padding-large" id="main">
-            <!-- Header/Home -->
-            <header class="w3-container w3-padding-32 w3-black" id="home"
-                style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px;">
-                <div>
-                    <h1 class="w3-jumbo">Marko Varga</h1>
-                    <p>Student, računalni inženjer, tehnološki zanesenjak</p>
-                </div>
-                <img src="./images/banner.png" alt="boy" class="w3-image" style="width: 33%; border-radius: 20px;">
-            </header>
+        <!-- Skills -->
+        <div class="w3-content w3-padding-64" id="skills">
+            <h2 class="w3-text-light-grey" id="skills-title">Znanja i Tehnologije</h2>
+            <hr style="width:200px" class="w3-opacity">
 
+            <h3 class="w3-padding-16 w3-text-light-grey" id="programming-title">Programski jezici</h3>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:90%">C/C++</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:88%">C#/.NET</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:85%">Python</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:80%">Java</div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-level" style="width:75%">JavaScript</div>
+            </div>
 
-
-            <!-- END PAGE CONTENT -->
+            <h3 class="w3-padding-16 w3-text-light-grey" id="tools-title">Alati i Tehnologije</h3>
+            <div>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Git/Github</span>
+                <span class="tech-badge">Jira</span>
+                <span class="tech-badge">Linux</span>
+                <span class="tech-badge">Visual Studio</span>
+                <span class="tech-badge">VS Code</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">R</span>
+                <span class="tech-badge">Julia</span>
+            </div>
         </div>
 
+        <!-- Education -->
+        <div class="w3-content w3-padding-64" id="education">
+            <h2 class="w3-text-light-grey" id="education-title">Obrazovanje</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="timeline-item">
+                <h3 class="w3-text-white" id="edu-1-title">Fakultet elektrotehnike i računarstva</h3>
+                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2024 – <span
+                        id="present-1">danas</span></p>
+                <p><strong id="edu-1-degree">Sveučilišni magistar inženjer računarstva</strong></p>
+                <p id="edu-1-desc">Student diplomskog studija, modul: Računalno inženjerstvo</p>
+                <p style="font-size: 14px; color: #aaa;" id="edu-1-courses">Ugradbeni računalni sustavi | Natjecateljske
+                    vještine u kibernetičkoj sigurnosti | Oblikovni obrasci u programiranju | Operacijski sustavi za
+                    ugrađena računala</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="w3-text-white" id="edu-2-title">Fakulteta za elektrotehniko, računalništvo in informatiko
+                </h3>
+                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>9.2024 – 2.2025</p>
+                <p><strong id="edu-2-degree">Erasmus+ razmjena, Maribor, Slovenija</strong></p>
+                <p style="font-size: 14px; color: #aaa;" id="edu-2-courses">Napredna informacijska sigurnost |
+                    Evolucijsko računarstvo | Razvoj video igara</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="w3-text-white" id="edu-3-title">Fakultet elektrotehnike i računarstva</h3>
+                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2021 – 2024</p>
+                <p><strong id="edu-3-degree">Sveučilišni prvostupnik inženjer računarstva</strong></p>
+                <p id="edu-3-desc">Završio studij u top 5% najuspješnijih studenata s magna cum laude počastima. Svake
+                    godine dobitnik STEM stipendije.</p>
+                <p style="font-size: 14px; color: #aaa;" id="edu-3-thesis">Završni rad: Optimizacija prometnih semafora
+                    evolucijskim algoritmom</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="w3-text-white" id="edu-4-title">Prva gimnazija Varaždin</h3>
+                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2017 – 2021</p>
+                <p><strong id="edu-4-degree">Prirodoslovno-matematička gimnazija</strong></p>
+                <p id="edu-4-desc">Upisan po primitku nagrade "Učenik generacije". Maturirao s odličnim uspjehom na
+                    višoj razini.</p>
+                <p style="font-size: 14px; color: #aaa;" id="edu-4-achievements">ACSL - 4 sudjelovanja i 2 medalje |
+                    Geografija - 1. mjesto | Matematika, Infokup, Fizika - sudjelovanja</p>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="w3-content w3-padding-64" id="experience">
+            <h2 class="w3-text-light-grey" id="experience-title">Radno Iskustvo</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="timeline-item">
+                <h3 class="w3-text-white" id="exp-1-title">Software Developer</h3>
+                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>7.2024 – <span
+                        id="present-2">danas</span></p>
+                <p><strong>IPC d.o.o., Čakovec</strong> | <span id="exp-1-type">praksa + studentski posao</span></p>
+                <p id="exp-1-desc">Aktivno sudjelujem u izradi parkirnog sustava koji se koristi u više od pedeset
+                    hrvatskih i regionalnih gradova. Dio sam backend tima.</p>
+                <p style="font-size: 14px; color: #aaa;" id="exp-1-tech">Tehnologije: C#/.NET, Docker, PL/SQL, GitHub
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="w3-text-white" id="exp-2-title">Demonstrator</h3>
+                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2021 – 2024</p>
+                <p><strong>FER, Sveučilište u Zagrebu</strong> | <span id="exp-2-type">povremeni studentski posao</span>
+                </p>
+                <p id="exp-2-desc">Pomoć studentima na laboratorijskim vježbama:</p>
+                <ul style="margin-left: 20px;">
+                    <li id="exp-2-job-1">Uvod u programiranje (UPRO) - 10.2023 - 1.2024</li>
+                    <li id="exp-2-job-2">Digitalna logika - 10.2021 - 1.2022</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="w3-content w3-padding-64" id="contact">
+            <h2 class="w3-text-light-grey" id="contact-title">Kontakt</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="w3-section">
+                <div class="contact-info">
+                    <i class="fa fa-envelope fa-fw w3-xxlarge"></i>
+                    <p>marko.varga@fer.hr</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-phone fa-fw w3-xxlarge"></i>
+                    <p>+385 99 791 7970</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fa fa-globe fa-fw w3-xxlarge"></i>
+                    <p>markovarga.from.hr</p>
+                </div>
+            </div>
+
+            <h3 class="w3-padding-16 w3-text-light-grey" id="hobbies-title">Hobiji i Interesi</h3>
+            <p id="hobbies-text-1">Osim gledanja serija i filmova (posebice sitcoma i fantasyja), često igram pub
+                kvizove (a okušao sam se i u organizaciji). Volim putovati, a također rado sviram gitaru.</p>
+            <p id="hobbies-text-2">Pomažem učenicima srednjih i osnovnih škola pri učenju STEM predmeta.</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-content w3-padding-64 w3-text-grey w3-center">
+            <p>© 2025 Marko Varga. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="language.js"></script>
 
 </body>
 
