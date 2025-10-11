@@ -347,7 +347,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: visible;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .project-wrapper {
+            flex: 1;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
         .project-track {
@@ -356,6 +374,7 @@
             transition: none;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .project-card {
@@ -422,9 +441,7 @@
         }
 
         .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            position: relative;
             background: linear-gradient(135deg, #fff, #e0e0e0);
             color: #000;
             border: none;
@@ -438,20 +455,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .carousel-arrow:hover {
             background: linear-gradient(135deg, #000, #333);
             color: #fff;
-            transform: translateY(-50%) scale(1.1);
+            transform: scale(1.1);
         }
 
         .carousel-arrow.left {
-            left: 20px;
+            margin-right: 30px;
         }
 
         .carousel-arrow.right {
-            right: 20px;
+            margin-left: 30px;
         }
 
         @media only screen and (max-width: 900px) {
@@ -809,33 +827,37 @@
                 Projekti</h3>
 
             <div class="project-carousel">
-                <button class="carousel-arrow left" onclick="moveCarousel(-1)">
-                    <i class="fa fa-chevron-left"></i>
-                </button>
+                <div class="carousel-container">
+                    <button class="carousel-arrow left" onclick="moveCarousel(-1)">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
 
-                <div class="project-track" id="projectTrack">
-                    <!-- Cards will be dynamically generated -->
-                    <div style="display: none;">
-                        <div id="project-1-title">Evolutionary Computing</div>
-                        <div id="project-1-desc">Optimizacija prometnih semafora korištenjem evolucijskih algoritama.
-                            Projekt razvijen u sklopu završnog rada.</div>
-                        <div id="project-1-link">Pogledaj na GitHub</div>
+                    <div class="project-wrapper">
+                        <div class="project-track" id="projectTrack">
+                            <!-- Cards will be dynamically generated -->
+                            <div style="display: none;">
+                                <div id="project-1-title">Evolutionary Computing</div>
+                                <div id="project-1-desc">Optimizacija prometnih semafora korištenjem evolucijskih
+                                    algoritama. Projekt razvijen u sklopu završnog rada.</div>
+                                <div id="project-1-link">Pogledaj na GitHub</div>
 
-                        <div id="project-2-title">JNotepad++</div>
-                        <div id="project-2-desc">Napredni tekstualni editor inspiriran Notepad++ aplikacijom. Podržava
-                            više jezika, teme i dodatne funkcionalnosti.</div>
-                        <div id="project-2-link">Pogledaj na GitHub</div>
+                                <div id="project-2-title">JNotepad++</div>
+                                <div id="project-2-desc">Napredni tekstualni editor inspiriran Notepad++ aplikacijom.
+                                    Podržava više jezika, teme i dodatne funkcionalnosti.</div>
+                                <div id="project-2-link">Pogledaj na GitHub</div>
 
-                        <div id="project-3-title">JPaint</div>
-                        <div id="project-3-desc">Grafička aplikacija za crtanje i uređivanje slika. Implementira
-                            različite alate za crtanje i geometrijske objekte.</div>
-                        <div id="project-3-link">Pogledaj na GitHub</div>
+                                <div id="project-3-title">JPaint</div>
+                                <div id="project-3-desc">Grafička aplikacija za crtanje i uređivanje slika. Implementira
+                                    različite alate za crtanje i geometrijske objekte.</div>
+                                <div id="project-3-link">Pogledaj na GitHub</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <button class="carousel-arrow right" onclick="moveCarousel(1)">
-                    <i class="fa fa-chevron-right"></i>
-                </button>
+                    <button class="carousel-arrow right" onclick="moveCarousel(1)">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
