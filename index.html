@@ -27,13 +27,13 @@
         /* Mouse follower */
         .mouse-follower {
             position: fixed;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            width: 200px;
+            height: 200px;
+            border-radius: 70%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.01), transparent);
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.15s ease-out;
+            transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             transform: translate(-50%, -50%);
         }
 
@@ -228,16 +228,23 @@
             box-shadow: 0 0 0 4px #000, 0 0 0 12px #fff;
         }
 
-        /* Experience cards - different style */
+        /* Creative Experience Cards */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
         .experience-card {
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            border: 2px solid #333;
-            transition: all 0.3s;
-            position: relative;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.8));
+            padding: 0;
+            border-radius: 20px;
             overflow: hidden;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            backdrop-filter: blur(10px);
         }
 
         .experience-card::before {
@@ -245,20 +252,77 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #fff, #666);
-            transition: all 0.3s;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #fff, #888, #fff);
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
         }
 
         .experience-card:hover {
-            border-color: #fff;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
         }
 
-        .experience-card:hover::before {
-            width: 8px;
+        .experience-header {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            padding: 25px;
+            position: relative;
+        }
+
+        .experience-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fff, #ccc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .experience-card:hover .experience-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .experience-body {
+            padding: 25px;
+        }
+
+        .experience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .experience-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .experience-tag:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         /* Tech badges with hover effect */
@@ -369,6 +433,10 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Project carousel */
@@ -380,42 +448,42 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .carousel-container {
             position: relative;
             width: 100%;
-            height: 100%;
+            max-width: 1200px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
         }
 
         .project-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
+            flex: 1;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .project-track {
             display: flex;
             gap: 30px;
+            transition: none;
             align-items: center;
-            position: absolute;
-            left: 50%;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            justify-content: center;
+            position: relative;
         }
 
         .project-card {
-            min-width: 300px;
-            height: 280px;
+            max-width: 400px;
+            height: 300px;
             background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             border-radius: 15px;
-            padding: 25px;
+            padding: 30px;
             border: 2px solid #333;
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0.4;
@@ -441,15 +509,15 @@
         }
 
         .project-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
+            font-size: 24px;
+            margin-bottom: 15px;
             color: #fff;
         }
 
         .project-card p {
-            font-size: 13px;
+            font-size: 14px;
             color: #aaa;
-            line-height: 1.5;
+            line-height: 1.6;
             flex-grow: 1;
         }
 
@@ -459,13 +527,13 @@
             gap: 8px;
             color: #fff;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
-            padding: 8px 16px;
+            padding: 10px 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             transition: all 0.3s;
-            margin-top: 12px;
+            margin-top: 15px;
         }
 
         .project-link:hover {
@@ -474,7 +542,9 @@
         }
 
         .carousel-arrow {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             background: linear-gradient(135deg, #fff, #e0e0e0);
             color: #000;
             border: none;
@@ -488,21 +558,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
         }
 
         .carousel-arrow:hover {
             background: linear-gradient(135deg, #000, #333);
             color: #fff;
-            transform: scale(1.1);
+            transform: translateY(-50%) scale(1.1);
         }
 
         .carousel-arrow.left {
-            margin-right: 30px;
+            left: 20px;
         }
 
         .carousel-arrow.right {
-            margin-left: 30px;
+            right: 20px;
         }
 
         @media only screen and (max-width: 900px) {
@@ -568,7 +637,8 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             position: relative;
             overflow: hidden;
-            border-radius: 30px 30px 30px 30px;
+            border-radius: 30px;
+            margin: 20px;
         }
 
         .parallax-header::before {
@@ -833,27 +903,48 @@
             <h2 class="w3-text-light-grey section-title" id="experience-title">Radno Iskustvo</h2>
             <hr style="width:200px" class="w3-opacity">
 
-            <div class="timeline-item">
-                <h3 class="w3-text-white" id="exp-1-title">Software Developer</h3>
-                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>7.2024 – <span
-                        id="present-2">danas</span></p>
-                <p><strong>IPC d.o.o., Čakovec</strong> | <span id="exp-1-type">praksa + studentski posao</span></p>
-                <p id="exp-1-desc">Aktivno sudjelujem u izradi parkirnog sustava koji se koristi u više od pedeset
-                    hrvatskih i regionalnih gradova. Dio sam backend tima.</p>
-                <p style="font-size: 14px; color: #aaa;" id="exp-1-tech">Tehnologije: C#/.NET, Docker, PL/SQL, GitHub
-                </p>
-            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fa fa-laptop"></i>
+                        </div>
+                        <h3 class="w3-text-white" id="exp-1-title">Software Developer</h3>
+                        <p class="w3-text-grey" style="margin: 0;"><i class="fa fa-calendar fa-fw"></i> 7.2024 – <span
+                                id="present-2">danas</span></p>
+                        <p style="margin-top: 5px;"><strong>IPC d.o.o., Čakovec</strong></p>
+                    </div>
+                    <div class="experience-body">
+                        <p style="margin-bottom: 5px;"><span id="exp-1-type">praksa + studentski posao</span></p>
+                        <p id="exp-1-desc">Aktivno sudjelujem u izradi parkirnog sustava koji se koristi u više od
+                            pedeset hrvatskih i regionalnih gradova. Dio sam backend tima.</p>
+                        <div class="experience-tags">
+                            <span class="experience-tag">C#/.NET</span>
+                            <span class="experience-tag">Docker</span>
+                            <span class="experience-tag">PL/SQL</span>
+                            <span class="experience-tag">GitHub</span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="timeline-item">
-                <h3 class="w3-text-white" id="exp-2-title">Demonstrator</h3>
-                <p class="w3-text-grey"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2021 – 2024</p>
-                <p><strong>FER, Sveučilište u Zagrebu</strong> | <span id="exp-2-type">povremeni studentski posao</span>
-                </p>
-                <p id="exp-2-desc">Pomoć studentima na laboratorijskim vježbama:</p>
-                <ul style="margin-left: 20px;">
-                    <li id="exp-2-job-1">Uvod u programiranje (UPRO) - 10.2023 - 1.2024</li>
-                    <li id="exp-2-job-2">Digitalna logika - 10.2021 - 1.2022</li>
-                </ul>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="w3-text-white" id="exp-2-title">Demonstrator</h3>
+                        <p class="w3-text-grey" style="margin: 0;"><i class="fa fa-calendar fa-fw"></i> 2021 – 2024</p>
+                        <p style="margin-top: 5px;"><strong>FER, Sveučilište u Zagrebu</strong></p>
+                    </div>
+                    <div class="experience-body">
+                        <p style="margin-bottom: 5px;"><span id="exp-2-type">povremeni studentski posao</span></p>
+                        <p id="exp-2-desc">Pomoć studentima na laboratorijskim vježbama:</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li id="exp-2-job-1">Uvod u programiranje (UPRO) - 10.2023 - 1.2024</li>
+                            <li id="exp-2-job-2">Digitalna logika - 10.2021 - 1.2022</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Projects Carousel -->
@@ -865,27 +956,22 @@
                     <i class="fa fa-chevron-left"></i>
                 </button>
 
-                <div class="carousel-container">
-                    <div class="project-wrapper">
-                        <div class="project-track" id="projectTrack">
-                            <!-- Cards will be dynamically generated -->
-                            <div style="display: none;">
-                                <div id="project-1-title">Evolutionary Computing</div>
-                                <div id="project-1-desc">Optimizacija prometnih semafora korištenjem evolucijskih
-                                    algoritama. Projekt razvijen u sklopu završnog rada.</div>
-                                <div id="project-1-link">Pogledaj na GitHub</div>
+                <div class="project-track" id="projectTrack">
+                    <div style="display: none;">
+                        <div id="project-1-title">Evolutionary Computing</div>
+                        <div id="project-1-desc">Optimizacija prometnih semafora korištenjem evolucijskih algoritama.
+                            Projekt razvijen u sklopu završnog rada.</div>
+                        <div id="project-1-link">Pogledaj na GitHub</div>
 
-                                <div id="project-2-title">JNotepad++</div>
-                                <div id="project-2-desc">Napredni tekstualni editor inspiriran Notepad++ aplikacijom.
-                                    Podržava više jezika, teme i dodatne funkcionalnosti.</div>
-                                <div id="project-2-link">Pogledaj na GitHub</div>
+                        <div id="project-2-title">JNotepad++</div>
+                        <div id="project-2-desc">Napredni tekstualni editor inspiriran Notepad++ aplikacijom. Podržava
+                            više jezika, teme i dodatne funkcionalnosti.</div>
+                        <div id="project-2-link">Pogledaj na GitHub</div>
 
-                                <div id="project-3-title">JPaint</div>
-                                <div id="project-3-desc">Grafička aplikacija za crtanje i uređivanje slika. Implementira
-                                    različite alate za crtanje i geometrijske objekte.</div>
-                                <div id="project-3-link">Pogledaj na GitHub</div>
-                            </div>
-                        </div>
+                        <div id="project-3-title">JPaint</div>
+                        <div id="project-3-desc">Grafička aplikacija za crtanje i uređivanje slika. Implementira
+                            različite alate za crtanje i geometrijske objekte.</div>
+                        <div id="project-3-link">Pogledaj na GitHub</div>
                     </div>
                 </div>
 
@@ -901,7 +987,6 @@
             <hr style="width:200px" class="w3-opacity">
 
             <div class="skills-grid">
-                <!-- Languages Column -->
                 <div class="content-card">
                     <h3 class="w3-text-light-grey section-title" id="languages-title">Jezici</h3>
 
@@ -927,7 +1012,6 @@
                     </div>
                 </div>
 
-                <!-- Hobbies Column -->
                 <div class="content-card">
                     <h3 class="w3-text-light-grey section-title" id="hobbies-title">Hobiji i Interesi</h3>
                     <p id="hobbies-text-1">Osim gledanja serija i filmova (posebice sitcoma i fantasyja), često igram
@@ -968,7 +1052,6 @@
 
     <script src="language.js"></script>
     <script>
-        // Mouse follower effect
         const mouseFollower = document.querySelector('.mouse-follower');
 
         document.addEventListener('mousemove', (e) => {
@@ -976,7 +1059,6 @@
             mouseFollower.style.top = e.clientY + 'px';
         });
 
-        // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -987,14 +1069,12 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
 
-                    // Animate skill bars
                     if (entry.target.id === 'skills') {
                         document.querySelectorAll('.skill-bar').forEach(bar => {
                             bar.classList.add('animated');
                         });
                     }
 
-                    // Animate stats counter
                     const statNumbers = entry.target.querySelectorAll('.stat-number');
                     statNumbers.forEach(stat => {
                         const target = parseInt(stat.getAttribute('data-target'));
@@ -1014,17 +1094,14 @@
             });
         }, observerOptions);
 
-        // Observe all scroll-fade elements
         document.querySelectorAll('.scroll-fade').forEach(el => {
             observer.observe(el);
         });
 
-        // Observe section titles
         document.querySelectorAll('.section-title').forEach(el => {
             observer.observe(el);
         });
 
-        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1038,7 +1115,6 @@
             });
         });
 
-        // Add parallax effect on scroll
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const parallax = document.querySelector('.parallax-header');
@@ -1047,7 +1123,6 @@
             }
         });
 
-        // Tech badge click effect
         document.querySelectorAll('.tech-badge').forEach(badge => {
             badge.addEventListener('click', () => {
                 badge.style.animation = 'pulse 0.5s ease';
@@ -1057,7 +1132,6 @@
             });
         });
 
-        // Project carousel functionality
         let currentIndex = 0;
         let isAnimating = false;
         const track = document.getElementById('projectTrack');
@@ -1122,55 +1196,79 @@
             return card;
         }
 
-        function updateCarouselPosition() {
-            const cardWidth = 330; // 300px + 30px gap
-            const offset = -cardWidth; // Center the middle card
-            track.style.transform = `translateX(calc(-50% + ${offset}px))`;
-        }
-
-        function renderCarousel() {
-            track.innerHTML = '';
-
+        function renderCarousel(animate = false) {
             const prevIndex = getCircularIndex(currentIndex - 1);
             const currIndex = currentIndex;
             const nextIndex = getCircularIndex(currentIndex + 1);
 
             const order = [prevIndex, currIndex, nextIndex];
 
-            order.forEach((dataIndex, position) => {
-                track.appendChild(createCard(dataIndex, position));
-            });
+            if (animate) {
+                const cards = track.querySelectorAll('.project-card');
+                cards.forEach(card => card.classList.add('transitioning'));
 
-            updateCarouselPosition();
+                setTimeout(() => {
+                    track.innerHTML = '';
+                    order.forEach((dataIndex, position) => {
+                        track.appendChild(createCard(dataIndex, position));
+                    });
+                    isAnimating = false;
+                }, 50);
+            } else {
+                track.innerHTML = '';
+                order.forEach((dataIndex, position) => {
+                    track.appendChild(createCard(dataIndex, position));
+                });
+            }
         }
 
         function moveCarousel(direction) {
             if (isAnimating) return;
             isAnimating = true;
 
-            currentIndex = getCircularIndex(currentIndex + direction);
-
-            // Smooth transition
-            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            const cards = track.querySelectorAll('.project-card');
 
             if (direction === 1) {
-                // Moving right - shift left
-                const cardWidth = 330;
-                const newOffset = -cardWidth * 2;
-                track.style.transform = `translateX(calc(-50% + ${newOffset}px))`;
+                cards.forEach(card => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.transform = 'translateX(-430px) scale(0.85)';
+                    card.style.opacity = '0';
+                });
             } else {
-                // Moving left - shift right
-                track.style.transform = `translateX(calc(-50% + 0px))`;
+                cards.forEach(card => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.transform = 'translateX(430px) scale(0.85)';
+                    card.style.opacity = '0';
+                });
             }
 
             setTimeout(() => {
-                track.style.transition = 'none';
-                renderCarousel();
-                isAnimating = false;
+                currentIndex = getCircularIndex(currentIndex + direction);
+                renderCarousel(false);
+
+                const newCards = track.querySelectorAll('.project-card');
+                newCards.forEach(card => {
+                    card.style.transition = 'none';
+                    card.style.transform = direction === 1 ? 'translateX(430px) scale(0.85)' : 'translateX(-430px) scale(0.85)';
+                    card.style.opacity = '0';
+                });
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        newCards.forEach((card) => {
+                            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                            card.style.transform = '';
+                            card.style.opacity = '';
+                        });
+
+                        setTimeout(() => {
+                            isAnimating = false;
+                        }, 600);
+                    });
+                });
             }, 600);
         }
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
                 moveCarousel(-1);
@@ -1179,7 +1277,6 @@
             }
         });
 
-        // Initial setup
         renderCarousel();
     </script>
 
