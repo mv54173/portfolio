@@ -17,15 +17,17 @@
         h5,
         h6 {
             font-family: "Montserrat", sans-serif;
+            scroll-behavior: smooth;
         }
 
-        .w3-row-padding img {
-            margin-bottom: 12px;
+        * {
+            scroll-behavior: smooth;
         }
 
         .w3-sidebar {
             width: 120px;
-            background: #222;
+            background: linear-gradient(180deg, #1a1a1a, #2d2d2d);
+            transition: all 0.3s;
         }
 
         #main {
@@ -38,80 +40,371 @@
             }
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Skill bars with animation */
         .skill-bar {
-            background-color: #333;
-            margin-bottom: 16px;
-            border-radius: 8px;
+            background-color: #2a2a2a;
+            margin-bottom: 20px;
+            border-radius: 10px;
             overflow: hidden;
-            height: 32px;
+            height: 40px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .skill-level {
-            background: linear-gradient(90deg, #666, #999);
-            height: 32px;
-            line-height: 32px;
-            padding-left: 12px;
+            background: linear-gradient(90deg, #4a90e2, #357abd);
+            height: 40px;
+            line-height: 40px;
+            padding-left: 15px;
             color: #fff;
             font-size: 14px;
-            transition: width 0.3s;
+            font-weight: 600;
+            transition: width 1.5s ease-out;
+            width: 0 !important;
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
         }
 
-        .timeline-item {
-            border-left: 2px solid #666;
-            padding-left: 20px;
-            margin-bottom: 24px;
+        .skill-bar.animated .skill-level {
+            width: var(--skill-width) !important;
+        }
+
+        /* Circular progress for languages */
+        .circular-progress {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(#4a90e2 var(--progress), #2a2a2a 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
+            margin: 20px;
+            transition: all 0.3s;
+        }
+
+        .circular-progress:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .circular-progress::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #1a1a1a;
+        }
+
+        .progress-value {
+            position: relative;
+            z-index: 1;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+        }
+
+        .languages-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        /* Timeline with enhanced design */
+        .timeline-item {
+            border-left: 3px solid #4a90e2;
+            padding-left: 25px;
+            margin-bottom: 40px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover {
+            border-left-color: #357abd;
+            transform: translateX(10px);
         }
 
         .timeline-item:before {
             content: '';
-            width: 12px;
-            height: 12px;
-            background: #999;
+            width: 16px;
+            height: 16px;
+            background: #4a90e2;
             border-radius: 50%;
             position: absolute;
-            left: -7px;
+            left: -10px;
             top: 5px;
+            box-shadow: 0 0 0 4px #1a1a1a, 0 0 0 8px #4a90e2;
+            transition: all 0.3s;
         }
 
+        .timeline-item:hover:before {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 4px #1a1a1a, 0 0 0 12px #4a90e2;
+        }
+
+        /* Tech badges with hover effect */
+        .tech-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+            padding: 10px 18px;
+            margin: 6px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: 1px solid #4a4a4a;
+            cursor: pointer;
+        }
+
+        .tech-badge:hover {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4);
+        }
+
+        /* Contact info with icons */
         .contact-info {
             display: flex;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #2a2a2a;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .contact-info:hover {
+            background: #3a3a3a;
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .contact-info i {
-            margin-right: 12px;
-            color: #999;
+            margin-right: 15px;
+            color: #4a90e2;
+            transition: all 0.3s;
         }
 
-        .tech-badge {
-            display: inline-block;
-            background: #333;
-            padding: 6px 12px;
-            margin: 4px;
-            border-radius: 4px;
-            font-size: 13px;
+        .contact-info:hover i {
+            transform: scale(1.2) rotate(10deg);
         }
 
+        /* Language switch button */
         .lang-switch {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #333;
+            background: linear-gradient(135deg, #4a90e2, #357abd);
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 12px 24px;
+            border-radius: 25px;
             cursor: pointer;
             font-family: "Montserrat", sans-serif;
             font-size: 14px;
+            font-weight: 600;
             z-index: 1000;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
         }
 
         .lang-switch:hover {
-            background: #555;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+        }
+
+        /* Header image with hover effect */
+        .header-image {
+            transition: all 0.5s;
+            filter: grayscale(20%);
+        }
+
+        .header-image:hover {
+            transform: scale(1.05) rotate(-2deg);
+            filter: grayscale(0%);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.3);
+        }
+
+        /* Card style for sections */
+        .content-card {
+            background: rgba(42, 42, 42, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(74, 144, 226, 0.1);
+            transition: all 0.3s;
+        }
+
+        .content-card:hover {
+            border-color: rgba(74, 144, 226, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* Stats counter animation */
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+            border-radius: 15px;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4a90e2;
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover .stat-number {
+            color: #fff;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        /* Parallax effect for header */
+        .parallax-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Section headers with underline animation */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #4a90e2, #357abd);
+            transition: width 0.5s ease;
+        }
+
+        .section-title.visible::after {
+            width: 100%;
+        }
+
+        /* Fade in on scroll */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -123,7 +416,7 @@
 
     <!-- Sidebar -->
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black">
             <i class="fa fa-home w3-xxlarge"></i>
             <p id="nav-home">POČETNA</p>
         </a>
@@ -152,7 +445,8 @@
     <!-- Mobile navbar -->
     <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
         <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-            <a href="#" class="w3-bar-item w3-button" style="width:16.66% !important" id="nav-home-mobile">POČETNA</a>
+            <a href="#home" class="w3-bar-item w3-button" style="width:16.66% !important"
+                id="nav-home-mobile">POČETNA</a>
             <a href="#about" class="w3-bar-item w3-button" style="width:16.66% !important" id="nav-about-mobile">O
                 MENI</a>
             <a href="#skills" class="w3-bar-item w3-button" style="width:16.66% !important"
@@ -170,78 +464,117 @@
     <div class="w3-padding-large" id="main">
 
         <!-- Header -->
-        <header class="w3-container w3-padding-32 w3-black" id="home"
-            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
-            <div>
+        <header class="w3-container w3-padding-64 parallax-header" id="home"
+            style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; position: relative; z-index: 1;">
+            <div class="fade-in" style="animation-delay: 0.2s;">
                 <h1 class="w3-jumbo"><span class="w3-hide-small">Marko </span>Varga</h1>
                 <p class="w3-large" id="header-subtitle">Student 4. godine FER-a</p>
                 <p id="header-description">Računarstvo | Programiranje | Backend razvoj</p>
             </div>
-            <img src="./images/banner.png" alt="Marko Varga" class="w3-image"
-                style="max-width: 300px; border-radius: 20px;">
+            <img src="./images/banner.png" alt="Marko Varga" class="w3-image header-image fade-in"
+                style="max-width: 300px; border-radius: 20px; animation-delay: 0.4s;">
         </header>
 
-        <!-- About -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-            <h2 class="w3-text-light-grey" id="about-title">O Meni</h2>
-            <hr style="width:200px" class="w3-opacity">
-            <p id="about-text-1">Student sam prve godine diplomskog studija na FER-u gdje sam preddiplomski studij
-                završio s odličnim uspjehom i velikom pohvalom (magna cum laude). Dolazim iz Međimurja, a rano sam
-                djetinjstvo proveo u Sloveniji gdje sam rođen.</p>
-            <p id="about-text-2">Marljiv sam i snalažljiv te se smatram prijateljski nastrojenom i otvorenom osobom.
-                Stalno sam u potrazi za novim izazovima i rado prihvaćam pružene prilike.</p>
+        <!-- Stats Section -->
+        <div class="w3-content scroll-fade" style="margin-top: 60px;">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Godine studija</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">+ Gradova</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-label">Tehnologije</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Jezika</div>
+                </div>
+            </div>
+        </div>
 
-            <h3 class="w3-padding-16 w3-text-light-grey" id="languages-title">Jezici</h3>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:95%" id="lang-english">Engleski - C1</div>
+        <!-- About -->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64 scroll-fade" id="about">
+            <h2 class="w3-text-light-grey section-title" id="about-title">O Meni</h2>
+            <hr style="width:200px" class="w3-opacity">
+
+            <div class="content-card">
+                <p id="about-text-1">Student sam prve godine diplomskog studija na FER-u gdje sam preddiplomski studij
+                    završio s odličnim uspjehom i velikom pohvalom (magna cum laude). Dolazim iz Međimurja, a rano sam
+                    djetinjstvo proveo u Sloveniji gdje sam rođen.</p>
+                <p id="about-text-2">Marljiv sam i snalažljiv te se smatram prijateljski nastrojenom i otvorenom osobom.
+                    Stalno sam u potrazi za novim izazovima i rado prihvaćam pružene prilike.</p>
             </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:80%" id="lang-slovenian">Slovenski - B2</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:70%" id="lang-german">Njemački - B1</div>
+
+            <h3 class="w3-padding-16 w3-text-light-grey section-title" id="languages-title">Jezici</h3>
+
+            <div class="languages-grid">
+                <div>
+                    <div class="circular-progress" style="--progress: 285deg;">
+                        <div class="progress-value">C1</div>
+                    </div>
+                    <p style="text-align: center;" id="lang-english">Engleski - C1</p>
+                </div>
+                <div>
+                    <div class="circular-progress" style="--progress: 240deg;">
+                        <div class="progress-value">B2</div>
+                    </div>
+                    <p style="text-align: center;" id="lang-slovenian">Slovenski - B2</p>
+                </div>
+                <div>
+                    <div class="circular-progress" style="--progress: 210deg;">
+                        <div class="progress-value">B1</div>
+                    </div>
+                    <p style="text-align: center;" id="lang-german">Njemački - B1</p>
+                </div>
             </div>
         </div>
 
         <!-- Skills -->
-        <div class="w3-content w3-padding-64" id="skills">
-            <h2 class="w3-text-light-grey" id="skills-title">Znanja i Tehnologije</h2>
+        <div class="w3-content w3-padding-64 scroll-fade" id="skills">
+            <h2 class="w3-text-light-grey section-title" id="skills-title">Znanja i Tehnologije</h2>
             <hr style="width:200px" class="w3-opacity">
 
-            <h3 class="w3-padding-16 w3-text-light-grey" id="programming-title">Programski jezici</h3>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:90%">C/C++</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:88%">C#/.NET</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:85%">Python</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:80%">Java</div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-level" style="width:75%">JavaScript</div>
-            </div>
+            <div class="content-card">
+                <h3 class="w3-padding-16 w3-text-light-grey" id="programming-title">Programski jezici</h3>
+                <div class="skill-bar">
+                    <div class="skill-level" style="--skill-width: 90%">C/C++</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="--skill-width: 88%">C#/.NET</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="--skill-width: 85%">Python</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="--skill-width: 80%">Java</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level" style="--skill-width: 75%">JavaScript</div>
+                </div>
 
-            <h3 class="w3-padding-16 w3-text-light-grey" id="tools-title">Alati i Tehnologije</h3>
-            <div>
-                <span class="tech-badge">Docker</span>
-                <span class="tech-badge">Git/Github</span>
-                <span class="tech-badge">Jira</span>
-                <span class="tech-badge">Linux</span>
-                <span class="tech-badge">Visual Studio</span>
-                <span class="tech-badge">VS Code</span>
-                <span class="tech-badge">PostgreSQL</span>
-                <span class="tech-badge">R</span>
-                <span class="tech-badge">Julia</span>
+                <h3 class="w3-padding-16 w3-text-light-grey" id="tools-title">Alati i Tehnologije</h3>
+                <div>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Git/Github</span>
+                    <span class="tech-badge">Jira</span>
+                    <span class="tech-badge">Linux</span>
+                    <span class="tech-badge">Visual Studio</span>
+                    <span class="tech-badge">VS Code</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">R</span>
+                    <span class="tech-badge">Julia</span>
+                </div>
             </div>
         </div>
 
         <!-- Education -->
-        <div class="w3-content w3-padding-64" id="education">
-            <h2 class="w3-text-light-grey" id="education-title">Obrazovanje</h2>
+        <div class="w3-content w3-padding-64 scroll-fade" id="education">
+            <h2 class="w3-text-light-grey section-title" id="education-title">Obrazovanje</h2>
             <hr style="width:200px" class="w3-opacity">
 
             <div class="timeline-item">
@@ -286,8 +619,8 @@
         </div>
 
         <!-- Experience -->
-        <div class="w3-content w3-padding-64" id="experience">
-            <h2 class="w3-text-light-grey" id="experience-title">Radno Iskustvo</h2>
+        <div class="w3-content w3-padding-64 scroll-fade" id="experience">
+            <h2 class="w3-text-light-grey section-title" id="experience-title">Radno Iskustvo</h2>
             <hr style="width:200px" class="w3-opacity">
 
             <div class="timeline-item">
@@ -315,8 +648,8 @@
         </div>
 
         <!-- Contact -->
-        <div class="w3-content w3-padding-64" id="contact">
-            <h2 class="w3-text-light-grey" id="contact-title">Kontakt</h2>
+        <div class="w3-content w3-padding-64 scroll-fade" id="contact">
+            <h2 class="w3-text-light-grey section-title" id="contact-title">Kontakt</h2>
             <hr style="width:200px" class="w3-opacity">
 
             <div class="w3-section">
@@ -334,10 +667,12 @@
                 </div>
             </div>
 
-            <h3 class="w3-padding-16 w3-text-light-grey" id="hobbies-title">Hobiji i Interesi</h3>
-            <p id="hobbies-text-1">Osim gledanja serija i filmova (posebice sitcoma i fantasyja), često igram pub
-                kvizove (a okušao sam se i u organizaciji). Volim putovati, a također rado sviram gitaru.</p>
-            <p id="hobbies-text-2">Pomažem učenicima srednjih i osnovnih škola pri učenju STEM predmeta.</p>
+            <div class="content-card">
+                <h3 class="w3-padding-16 w3-text-light-grey" id="hobbies-title">Hobiji i Interesi</h3>
+                <p id="hobbies-text-1">Osim gledanja serija i filmova (posebice sitcoma i fantasyja), često igram pub
+                    kvizove (a okušao sam se i u organizaciji). Volim putovati, a također rado sviram gitaru.</p>
+                <p id="hobbies-text-2">Pomažem učenicima srednjih i osnovnih škola pri učenju STEM predmeta.</p>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -348,6 +683,88 @@
     </div>
 
     <script src="language.js"></script>
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate skill bars
+                    if (entry.target.id === 'skills') {
+                        document.querySelectorAll('.skill-bar').forEach(bar => {
+                            bar.classList.add('animated');
+                        });
+                    }
+
+                    // Animate stats counter
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-target'));
+                        let current = 0;
+                        const increment = target / 50;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                stat.textContent = target + (stat.nextElementSibling.textContent.includes('+') ? '+' : '');
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = Math.floor(current);
+                            }
+                        }, 30);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-fade elements
+        document.querySelectorAll('.scroll-fade').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observe section titles
+        document.querySelectorAll('.section-title').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-header');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Tech badge click effect
+        document.querySelectorAll('.tech-badge').forEach(badge => {
+            badge.addEventListener('click', () => {
+                badge.style.animation = 'pulse 0.5s ease';
+                setTimeout(() => {
+                    badge.style.animation = '';
+                }, 500);
+            });
+        });
+    </script>
 
 </body>
 
