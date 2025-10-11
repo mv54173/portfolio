@@ -350,27 +350,6 @@
             overflow: hidden;
         }
 
-        .project-carousel::before,
-        .project-carousel::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 25%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        .project-carousel::before {
-            left: 0;
-            background: linear-gradient(to right, #000 0%, transparent 100%);
-        }
-
-        .project-carousel::after {
-            right: 0;
-            background: linear-gradient(to left, #000 0%, transparent 100%);
-        }
-
         .carousel-container {
             position: relative;
             width: 100%;
@@ -400,16 +379,15 @@
 
         .project-card {
             min-width: 300px;
-            max-width: 400px;
             height: 280px;
             background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             border-radius: 15px;
             padding: 25px;
             border: 2px solid #333;
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0.2;
+            opacity: 0.4;
             transform: scale(0.85);
-            filter: blur(3px);
+            filter: blur(2px);
             cursor: pointer;
             display: flex;
             flex-direction: column;
@@ -496,8 +474,8 @@
 
         @media only screen and (max-width: 900px) {
             .project-card {
-                min-width: 250px;
-                height: 320px;
+                min-width: 280px;
+                height: 350px;
             }
 
             .carousel-arrow {
