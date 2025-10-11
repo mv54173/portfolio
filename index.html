@@ -347,42 +347,42 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .carousel-container {
             position: relative;
             width: 100%;
-            height: 100%;
+            max-width: 1200px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
         }
 
         .project-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
+            flex: 1;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .project-track {
             display: flex;
             gap: 30px;
+            transition: none;
             align-items: center;
-            position: absolute;
-            left: 50%;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            justify-content: center;
+            position: relative;
         }
 
         .project-card {
-            min-width: 300px;
-            height: 280px;
+            min-width: 350px;
+            height: 300px;
             background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
             border-radius: 15px;
-            padding: 25px;
+            padding: 30px;
             border: 2px solid #333;
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0.4;
@@ -408,15 +408,15 @@
         }
 
         .project-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
+            font-size: 24px;
+            margin-bottom: 15px;
             color: #fff;
         }
 
         .project-card p {
-            font-size: 13px;
+            font-size: 14px;
             color: #aaa;
-            line-height: 1.5;
+            line-height: 1.6;
             flex-grow: 1;
         }
 
@@ -426,13 +426,13 @@
             gap: 8px;
             color: #fff;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
-            padding: 8px 16px;
+            padding: 10px 20px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             transition: all 0.3s;
-            margin-top: 12px;
+            margin-top: 15px;
         }
 
         .project-link:hover {
@@ -441,7 +441,9 @@
         }
 
         .carousel-arrow {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             background: linear-gradient(135deg, #fff, #e0e0e0);
             color: #000;
             border: none;
@@ -455,27 +457,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
         }
 
         .carousel-arrow:hover {
             background: linear-gradient(135deg, #000, #333);
             color: #fff;
-            transform: scale(1.1);
+            transform: translateY(-50%) scale(1.1);
         }
 
         .carousel-arrow.left {
-            margin-right: 30px;
+            left: 20px;
         }
 
         .carousel-arrow.right {
-            margin-left: 30px;
+            right: 20px;
         }
 
         @media only screen and (max-width: 900px) {
             .project-card {
-                min-width: 250px;
-                height: 320px;
+                min-width: 280px;
+                height: 350px;
             }
 
             .carousel-arrow {
@@ -831,27 +832,23 @@
                     <i class="fa fa-chevron-left"></i>
                 </button>
 
-                <div class="carousel-container">
-                    <div class="project-wrapper">
-                        <div class="project-track" id="projectTrack">
-                            <!-- Cards will be dynamically generated -->
-                            <div style="display: none;">
-                                <div id="project-1-title">Evolutionary Computing</div>
-                                <div id="project-1-desc">Optimizacija prometnih semafora korištenjem evolucijskih
-                                    algoritama. Projekt razvijen u sklopu završnog rada.</div>
-                                <div id="project-1-link">Pogledaj na GitHub</div>
+                <div class="project-track" id="projectTrack">
+                    <!-- Cards will be dynamically generated -->
+                    <div style="display: none;">
+                        <div id="project-1-title">Evolutionary Computing</div>
+                        <div id="project-1-desc">Optimizacija prometnih semafora korištenjem evolucijskih algoritama.
+                            Projekt razvijen u sklopu završnog rada.</div>
+                        <div id="project-1-link">Pogledaj na GitHub</div>
 
-                                <div id="project-2-title">JNotepad++</div>
-                                <div id="project-2-desc">Napredni tekstualni editor inspiriran Notepad++ aplikacijom.
-                                    Podržava više jezika, teme i dodatne funkcionalnosti.</div>
-                                <div id="project-2-link">Pogledaj na GitHub</div>
+                        <div id="project-2-title">JNotepad++</div>
+                        <div id="project-2-desc">Napredni tekstualni editor inspiriran Notepad++ aplikacijom. Podržava
+                            više jezika, teme i dodatne funkcionalnosti.</div>
+                        <div id="project-2-link">Pogledaj na GitHub</div>
 
-                                <div id="project-3-title">JPaint</div>
-                                <div id="project-3-desc">Grafička aplikacija za crtanje i uređivanje slika. Implementira
-                                    različite alate za crtanje i geometrijske objekte.</div>
-                                <div id="project-3-link">Pogledaj na GitHub</div>
-                            </div>
-                        </div>
+                        <div id="project-3-title">JPaint</div>
+                        <div id="project-3-desc">Grafička aplikacija za crtanje i uređivanje slika. Implementira
+                            različite alate za crtanje i geometrijske objekte.</div>
+                        <div id="project-3-link">Pogledaj na GitHub</div>
                     </div>
                 </div>
 
@@ -1088,51 +1085,78 @@
             return card;
         }
 
-        function updateCarouselPosition() {
-            const cardWidth = 330; // 300px + 30px gap
-            const offset = -cardWidth; // Center the middle card
-            track.style.transform = `translateX(calc(-50% + ${offset}px))`;
-        }
-
-        function renderCarousel() {
-            track.innerHTML = '';
-
+        function renderCarousel(animate = false) {
             const prevIndex = getCircularIndex(currentIndex - 1);
             const currIndex = currentIndex;
             const nextIndex = getCircularIndex(currentIndex + 1);
 
             const order = [prevIndex, currIndex, nextIndex];
 
-            order.forEach((dataIndex, position) => {
-                track.appendChild(createCard(dataIndex, position));
-            });
+            if (animate) {
+                const cards = track.querySelectorAll('.project-card');
+                cards.forEach(card => card.classList.add('transitioning'));
 
-            updateCarouselPosition();
+                setTimeout(() => {
+                    track.innerHTML = '';
+                    order.forEach((dataIndex, position) => {
+                        track.appendChild(createCard(dataIndex, position));
+                    });
+                    isAnimating = false;
+                }, 50);
+            } else {
+                track.innerHTML = '';
+                order.forEach((dataIndex, position) => {
+                    track.appendChild(createCard(dataIndex, position));
+                });
+            }
         }
 
         function moveCarousel(direction) {
             if (isAnimating) return;
             isAnimating = true;
 
-            currentIndex = getCircularIndex(currentIndex + direction);
-
-            // Smooth transition
-            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            const cards = track.querySelectorAll('.project-card');
 
             if (direction === 1) {
-                // Moving right - shift left
-                const cardWidth = 330;
-                const newOffset = -cardWidth * 2;
-                track.style.transform = `translateX(calc(-50% + ${newOffset}px))`;
+                // Moving right
+                cards.forEach(card => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.transform = 'translateX(-430px) scale(0.85)';
+                    card.style.opacity = '0';
+                });
             } else {
-                // Moving left - shift right
-                track.style.transform = `translateX(calc(-50% + 0px))`;
+                // Moving left
+                cards.forEach(card => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    card.style.transform = 'translateX(430px) scale(0.85)';
+                    card.style.opacity = '0';
+                });
             }
 
             setTimeout(() => {
-                track.style.transition = 'none';
-                renderCarousel();
-                isAnimating = false;
+                currentIndex = getCircularIndex(currentIndex + direction);
+                renderCarousel(false);
+
+                const newCards = track.querySelectorAll('.project-card');
+                newCards.forEach(card => {
+                    card.style.transition = 'none';
+                    card.style.transform = direction === 1 ? 'translateX(430px) scale(0.85)' : 'translateX(-430px) scale(0.85)';
+                    card.style.opacity = '0';
+                });
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        newCards.forEach((card, index) => {
+                            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                            card.style.transform = '';
+                            card.style.opacity = '';
+                        });
+
+                        setTimeout(() => {
+                            isAnimating = false;
+                        }, 600);
+                    });
+                });
             }, 600);
         }
 
