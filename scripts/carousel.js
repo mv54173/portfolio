@@ -1,4 +1,3 @@
-// Project carousel functionality
 let currentIndex = 0;
 let isAnimating = false;
 const track = document.getElementById('projectTrack');
@@ -21,6 +20,18 @@ const projectData = [
         title: '',
         desc: '',
         link: 'https://github.com/mv54173/JPaint',
+        linkText: ''
+    },
+    {
+        title: '',
+        desc: '',
+        link: 'https://github.com/mv54173/LCD-EReader',
+        linkText: ''
+    },
+    {
+        title: '',
+        desc: '',
+        link: 'https://github.com/mv54173/SnakeGame',
         linkText: ''
     }
 ];
@@ -190,6 +201,13 @@ function initCarousel() {
     renderCarousel();
     initCarouselKeyboard();
 }
+
+// Reload carousel data when language changes
+document.addEventListener('languageChanged', function () {
+    if (!track) return;
+    loadProjectData();
+    renderCarousel(false);
+});
 
 // Run on page load
 document.addEventListener('DOMContentLoaded', initCarousel);
