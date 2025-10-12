@@ -25,13 +25,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function loadLanguage(lang) {
     fetch(`languages/${lang}.json`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
+            console.log('Language data loaded:', lang, data); // Debug log
+
             // Update all elements with translations
             for (const key in data) {
                 const element = document.getElementById(key);
                 if (element) {
-                    element.textContent = data[key];
+                    // Use innerHTML to support HTML tags in translations
+                    element.innerHTML = data[key];
+                } else {
+                    console.warn(`Element with id "${key}" not found`); // Debug log
                 }
             }
 
