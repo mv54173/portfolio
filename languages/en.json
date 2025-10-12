@@ -139,9 +139,9 @@
         },
         {
             "icon": "fa-microchip",
-            "title": "ByteLab Embedded Software Academy",
+            "title": "BL Embedded Software Academy",
             "period": "9.2025",
-            "company": "Byte Lab",
+            "company": "Byte Lab, Zagreb",
             "type": "one-month internship",
             "description": "I participated in an intensive five-week internship focused on embedded software. During the program, I built an LCD-based e-book reader in C using ESP-IDF and FreeRTOS. My final project was selected as the best.",
             "tags": [

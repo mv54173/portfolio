@@ -139,9 +139,9 @@
         },
         {
             "icon": "fa-microchip",
-            "title": "ByteLab Embedded Software Academy",
+            "title": "BL Embedded Software Academy",
             "period": "9.2025",
-            "company": "Byte Lab",
+            "company": "Byte Lab, Zagreb",
             "type": "jednomjesečna praksa",
             "description": "Sudjelovao sam u intenzivnoj petotjednoj praksi fokusiranoj na embedded software. Tijekom programa izradio sam čitač e-knjiga temeljen na LCD-u u C-u koristeći ESP-IDF i FreeRTOS. Moj završni projekt nagrađen je kao najbolji.",
             "tags": [
