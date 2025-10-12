@@ -41,36 +41,55 @@ h6 {
         margin-left: 0;
     }
 
-    /* Mobile navigation - full width with horizontal scroll */
+    /* Mobile navigation - fixed width with horizontal scroll */
     #myNavbar {
-        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100vw;
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        white-space: nowrap;
+        z-index: 1000;
     }
 
     #myNavbar .w3-bar {
         display: inline-flex;
         width: auto;
         min-width: 100%;
+        white-space: nowrap;
     }
 
     #myNavbar .w3-bar-item {
         flex: 0 0 auto;
         width: auto !important;
-        padding: 12px 16px !important;
+        padding: 12px 20px !important;
         display: inline-block;
+        font-size: 11px;
     }
 
     /* Hide scrollbar but keep functionality */
     #myNavbar::-webkit-scrollbar {
-        display: none;
+        height: 3px;
     }
 
-    #myNavbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+    #myNavbar::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    #myNavbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 3px;
+    }
+
+    #myNavbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Add padding to main content on mobile to account for fixed navbar */
+    body.w3-black {
+        padding-top: 44px;
     }
 }
 
