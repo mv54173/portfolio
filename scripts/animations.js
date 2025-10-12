@@ -49,20 +49,23 @@ function initScrollAnimations() {
 
 // Counter animation
 function animateCounter(stat) {
-    const target = parseInt(stat.getAttribute('data-target'));
+    const rawTarget = stat.getAttribute('data-target');
+    const hasPlus = rawTarget.includes('+');
+    const target = parseInt(rawTarget);
     let current = 0;
     const increment = target / 50;
 
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            stat.textContent = target + (stat.nextElementSibling.textContent.includes('+') ? '+' : '');
+            stat.textContent = target + (hasPlus ? '+' : '');
             clearInterval(timer);
         } else {
             stat.textContent = Math.floor(current);
         }
     }, 30);
 }
+
 
 // Smooth scroll for anchor links
 function initSmoothScroll() {
