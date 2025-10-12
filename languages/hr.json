@@ -24,12 +24,12 @@
     "lang-english": "Engleski",
     "lang-slovenian": "Slovenski",
     "lang-german": "Njemački",
-    "skills-title": "Znanja i Tehnologije",
+    "skills-title": "Znanja i tehnologije",
     "programming-title": "Programski jezici",
-    "tools-title": "Alati i Tehnologije",
+    "tools-title": "Alati i tehnologije",
     "education-title": "Obrazovanje",
-    "experience-title": "Radno Iskustvo",
-    "more-title": "Više o meni",
+    "experience-title": "Iskustvo",
+    "more-title": "Post scriptum",
     "projects-title": "Projekti",
     "contact-title": "Kontakt",
     "hobbies-title": "Hobiji i interesi",
@@ -37,38 +37,38 @@
     "hobbies-text-2": "Pomažem učenicima srednjih i osnovnih škola pri učenju STEM predmeta.",
     "stats": [
         {
-            "value": "7+",
+            "value": "10",
             "label": "godina programiranja"
         },
         {
-            "value": "100+",
+            "value": "150+",
             "label": "odigranih i organiziranih kvizova"
         },
         {
-            "value": "10+",
+            "value": "13",
             "label": "državnih i međunarodnih natjecanja"
         }
     ],
     "skills": {
         "programming": [
             {
-                "name": "C/C++",
-                "level": 90
-            },
-            {
                 "name": "C#/.NET",
-                "level": 88
-            },
-            {
-                "name": "Python",
-                "level": 85
+                "level": 100
             },
             {
                 "name": "Java",
+                "level": 88
+            },
+            {
+                "name": "C/C++",
+                "level": 85
+            },
+            {
+                "name": "SQL",
                 "level": 80
             },
             {
-                "name": "JavaScript",
+                "name": "Python",
                 "level": 75
             }
         ],
@@ -79,9 +79,10 @@
             "Linux",
             "Visual Studio",
             "VS Code",
-            "PostgreSQL",
-            "R",
-            "Julia"
+            "PgAdmin",
+            "ESP-IDF",
+            "FreeRTOS",
+            "Nomad"
         ]
     },
     "education": [
@@ -89,28 +90,29 @@
             "institution": "Ekonomski i turistički fakultet 'Dr. Mijo Mirković' - Pula",
             "period": "2025 – sada",
             "degree": "Magistar ekonomije",
-            "description": "Ovo je primijenjeni program ekonomije na koji sam se upisao kako bih stekao poslovne i poduzetničke vještine.",
+            "description": "Ovo je program primijenjene ekonomije na koji sam se upisao kako bih stekao poslovne i poduzetničke vještine.",
             "courses": "Napredna mikroekonomija | Teorija igara | Ponašajna ekonomija | Napredna makroekonomija"
         },
         {
             "institution": "Fakultet elektrotehnike i računarstva - Zagreb",
             "period": "2024 – sada",
-            "degree": "Magistar računalnog inženjerstva",
-            "description": "Stječem znanje u širokom spektru područja: od arhitekture hardvera i operativnih sustava do aplikacijskih slojeva i servisa.",
-            "courses": "Ugrađeni računalni sustavi | Kompetitivne vještine kibernetičke sigurnosti | Dizajnerski obrasci u programiranju | Operativni sustavi za ugrađene računalne sustave"
+            "degree": "Magistar inženjer računalnog inženjerstva",
+            "description": "Stječem znanja u širokom spektru područja: od arhitekture sklopovlja i operacijskih sustava do aplikacijskih slojeva i servisa.",
+            "courses": "Ugrađeni računalni sustavi | Natjecateljske vještine u kibernetičkoj sigurnosti | Oblikovni obrasci u programiranju | Operacijski sustavi za ugrađene računalne sustave"
         },
         {
             "institution": "Fakultet elektrotehnike i računalništva - Maribor",
             "period": "9.2024 – 2.2025",
-            "degree": "Ovo je bio Erasmus+ program razmjene u Mariboru, Slovenija, gdje sam stekao međunarodne kontakte i iskustvo u multikulturalnom okruženju.",
-            "courses": "Napredna informacijska sigurnost | Evolucijsko računarstvo | Razvoj videoigara u Javi"
+            "degree": "Erasmus+ razmjena",
+            "description": "Stekao međunarodne kontakte i multikulturalno iskustvo, kao i proširio svoje poglede na globalne tehnologije i inženjerske prakse.",
+            "courses": "Napredna informacijska sigurnost | Evolucijsko računarstvo | Razvoj videoigara u Javi | Cassini hackathon"
         },
         {
             "institution": "Fakultet elektrotehnike i računarstva - Zagreb",
             "period": "2021 – 2024",
             "degree": "Prvostupnik računalnog inženjerstva",
-            "description": "Diplomirao među 5% najboljih studenata s pohvalama magna cum laude i primao STEM stipendiju svake godine.",
-            "courses": "<strong>Diplomski rad:</strong> Optimizacija semafora pomoću evolucijskih algoritama"
+            "description": "Diplomirao sam među 5% najboljih studenata s pohvalama magna cum laude i bio dobitnik STEM stipendiju svake godine.",
+            "courses": "<strong>Završni rad:</strong> Optimizacija semafora pomoću evolucijskih algoritama"
         },
         {
             "institution": "Prva gimnazija Varaždin",
@@ -141,7 +143,7 @@
             "period": "9.2024",
             "company": "Byte Lab",
             "type": "jednomjesečna praksa",
-            "description": "Sudjelovao sam na intenzivnoj pettjednoj praksi fokusiranoj na embedded software. Tijekom programa izradio sam LCD-based e-book reader u C-u koristeći ESP-IDF i FreeRTOS. Moj završni projekt izabran je kao najbolji.",
+            "description": "Sudjelovao sam u intenzivnoj petotjednoj praksi fokusiranoj na embedded software. Tijekom programa izradio sam čitač e-knjiga temeljen na LCD-u u C-u koristeći ESP-IDF i FreeRTOS. Moj završni projekt nagrađen je kao najbolji.",
             "tags": [
                 "ESP32",
                 "FreeRTOS",
@@ -152,14 +154,14 @@
             ]
         },
         {
-            "icon": "fa-graduation-cap",
+            "icon": "fa-university",
             "title": "Demonstrator",
             "period": "2021 – 2024",
             "company": "FER, Sveučilište u Zagrebu",
             "type": "povremeni studentski posao",
             "description": "Pružao sam pomoć studentima i potporu asistentima u izvođenju laboratorijskih vježbi:",
             "list": [
-                "Uvod u programiranje (UPRO) - 10.2023 - 1.2024",
+                "Uvod u programiranje - 10.2023 - 1.2024",
                 "Digitalna logika - 10.2021 - 1.2022"
             ]
         }
@@ -167,25 +169,25 @@
     "projects": [
         {
             "title": "Evolutionary Computing",
-            "desc": "Optimizacija prometnih semafora korištenjem evolucijskih algoritama. Projekt razvijen u sklopu završnog rada.",
+            "desc": "Jednostavna Java biblioteka nekoliko metaheuristika iz područja evolucijskog računarstva.",
             "linkText": "Pogledaj na GitHub",
             "url": "https://github.com/mv54173/EvolutionaryComputing"
         },
         {
             "title": "JNotepad++",
-            "desc": "Napredni tekstualni editor inspiriran Notepad++ aplikacijom. Podržava više jezika, teme i dodatne funkcionalnosti.",
+            "desc": "Napredni tekstualni editor inspiriran Notepad++ aplikacijom izveden u Javi. Podržava više jezika, teme i dodatne funkcionalnosti.",
             "linkText": "Pogledaj na GitHub",
             "url": "https://github.com/mv54173/JNotepadPP"
         },
         {
             "title": "JPaint",
-            "desc": "Grafička aplikacija za crtanje i uređivanje slika. Implementira različite alate za crtanje i geometrijske objekte.",
+            "desc": "Grafička aplikacija za crtanje i uređivanje slika izvedena u Javi. Implementira različite alate za crtanje i geometrijske objekte.",
             "linkText": "Pogledaj na GitHub",
             "url": "https://github.com/mv54173/JPaint"
         },
         {
             "title": "LCD-based E-Reader",
-            "desc": "E-book čitač s LCD zaslonom razvijen na ESP32 mikrokontroleru. Koristi FreeRTOS za multitasking i podržava navigaciju kroz tekstualne datoteke.",
+            "desc": "Čitač s LCD zaslonom razvijen na ESP32 mikrokontroleru. Koristi FreeRTOS za multitasking i podržava navigaciju kroz tekstualne datoteke.",
             "linkText": "Pogledaj na GitHub",
             "url": "https://github.com/mv54173/LCD-EReader"
         },

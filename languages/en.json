@@ -29,7 +29,7 @@
     "tools-title": "Tools and Technologies",
     "education-title": "Education",
     "experience-title": "Work Experience",
-    "more-title": "More About Me",
+    "more-title": "Post scriptum",
     "projects-title": "Projects",
     "contact-title": "Contact",
     "hobbies-title": "Hobbies and Interests",
@@ -97,14 +97,15 @@
             "institution": "Faculty of Electrical Engineering and Computing - Zagreb",
             "period": "2024 – present",
             "degree": "Master of Computer Engineering",
-            "description": "Gaining knowledge in wide range of areas: from hardware architecture and operating systems to application layers and services",
+            "description": "Gaining knowledge in wide range of areas: from hardware architecture and operating systems to application layers and services.",
             "courses": "Embedded Computer Systems | Competitive Cybersecurity Skills | Design Patterns in Programming | Operating Systems for Embedded Computers"
         },
         {
             "institution": "Faculty of Electrical Engineering and Computer Science - Maribor",
             "period": "9.2024 – 2.2025",
-            "degree": "This was an Erasmus+ exchange in Maribor, Slovenia where I gained international contacts and multicultural experience.",
-            "courses": "Advanced Information Security | Evolutionary Computing | Video Game Development in Java"
+            "degree": "Erasmus+ exchange",
+            "description": "Gained international contacts and multicultural experience, as well as broaden my perspective on global technology and engineering practices.",
+            "courses": "Advanced Information Security | Evolutionary Computing | Video Game Development in Java | Cassini Hackathon"
         },
         {
             "institution": "Faculty of Electrical Engineering and Computing - Zagreb",
@@ -160,7 +161,7 @@
             "type": "part-time student job",
             "description": "Provided assistance to students and support to instructors in conducting lab exercises:",
             "list": [
-                "Introduction to Programming (UPRO) - 10.2023 - 1.2024",
+                "Introduction to Programming - 10.2023 - 1.2024",
                 "Digital Logic - 10.2021 - 1.2022"
             ]
         }
@@ -168,19 +169,19 @@
     "projects": [
         {
             "title": "Evolutionary Computing",
-            "desc": "Traffic light optimization using evolutionary algorithms. Project developed as part of bachelor's thesis.",
+            "desc": "A simple Java library of several metaheuristics in the field of evolutionary computing.",
             "linkText": "View on GitHub",
             "url": "https://github.com/mv54173/EvolutionaryComputing"
         },
         {
             "title": "JNotepad++",
-            "desc": "Advanced text editor inspired by the Notepad++ application. Supports multiple languages, themes and additional features.",
+            "desc": "Advanced text editor inspired by the Notepad++ application and written in Java. Supports multiple languages, themes and additional features.",
             "linkText": "View on GitHub",
             "url": "https://github.com/mv54173/JNotepadPP"
         },
         {
             "title": "JPaint",
-            "desc": "Graphics application for drawing and editing images. Implements various drawing tools and geometric objects.",
+            "desc": "Graphics application for drawing and editing images written in Java. Implements various drawing tools and geometric objects.",
             "linkText": "View on GitHub",
             "url": "https://github.com/mv54173/JPaint"
         },
