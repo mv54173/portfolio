@@ -3,38 +3,15 @@ let currentIndex = 0;
 let isAnimating = false;
 let projectData = [];
 
-// Project URLs (static, not translated)
-const projectUrls = {
-    1: 'https://github.com/mv54173/EvolutionaryComputing',
-    2: 'https://github.com/mv54173/JNotepadPP',
-    3: 'https://github.com/mv54173/JPaint',
-    4: 'https://github.com/mv54173/LCD-EReader',
-    5: 'https://github.com/mv54173/SnakeGame'
-};
-
-// Load all projects from HTML
-function loadProjectData() {
-    projectData = [];
-    let index = 1;
-
-    while (true) {
-        const titleEl = document.getElementById(`project-${index}-title`);
-        if (!titleEl) break;
-
-        const descEl = document.getElementById(`project-${index}-desc`);
-        const linkTextEl = document.getElementById(`project-${index}-link`);
-
-        projectData.push({
-            title: titleEl.textContent,
-            desc: descEl ? descEl.textContent : '',
-            linkText: linkTextEl ? linkTextEl.textContent : 'View',
-            url: projectUrls[index] || '#'
-        });
-
-        index++;
+// Load projects from language data
+function loadProjectData(languageData) {
+    if (!languageData || !languageData.projects) {
+        console.error('No projects found in language data');
+        return 0;
     }
 
-    console.log(`Loaded ${projectData.length} projects`, projectData);
+    projectData = languageData.projects;
+    console.log(`Loaded ${projectData.length} projects from language data`);
     return projectData.length;
 }
 
@@ -85,7 +62,7 @@ function renderCarousel() {
         return;
     }
 
-    // Clear existing cards (but keep the hidden data div)
+    // Clear existing cards
     const existingCards = track.querySelectorAll('.project-card');
     existingCards.forEach(card => card.remove());
 
@@ -177,30 +154,31 @@ function initKeyboardNav() {
     });
 }
 
-// Reload carousel when language changes
-document.addEventListener('languageChanged', function () {
-    console.log('Language changed, reloading projects');
-    setTimeout(() => {
-        const count = loadProjectData();
-        if (count > 0) {
-            currentIndex = 0;
-            renderCarousel();
-        }
-    }, 100);
+// Listen for language changes
+document.addEventListener('languageChanged', function (event) {
+    console.log('Carousel: Language changed, reloading projects');
+    const count = loadProjectData(event.detail.data);
+    if (count > 0) {
+        currentIndex = 0;
+        renderCarousel();
+    }
 });
 
 // Initialize carousel on page load
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOM loaded, initializing carousel');
+    console.log('Carousel: DOM loaded, waiting for language data');
 
-    // Small delay to ensure language.js has run
+    // Wait a bit for language.js to load data
     setTimeout(() => {
-        const count = loadProjectData();
-        if (count > 0) {
-            renderCarousel();
-            initKeyboardNav();
+        const languageData = getCurrentLanguageData();
+        if (languageData) {
+            const count = loadProjectData(languageData);
+            if (count > 0) {
+                renderCarousel();
+                initKeyboardNav();
+            }
         } else {
-            console.error('No projects found! Check HTML structure.');
+            console.error('Language data not available yet');
         }
-    }, 100);
+    }, 200);
 });

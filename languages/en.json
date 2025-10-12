@@ -1,5 +1,6 @@
 {
     "lang-switch": "HR",
+    "nav-home": "HOME",
     "nav-about": "ABOUT",
     "nav-skills": "SKILLS",
     "nav-education": "EDUCATION",
@@ -61,23 +62,40 @@
     "exp-3-job-1": "Introduction to Programming (UPRO) - 10.2023 - 1.2024",
     "exp-3-job-2": "Digital Logic - 10.2021 - 1.2022",
     "projects-title": "Projects",
-    "project-1-title": "Evolutionary Computing",
-    "project-1-desc": "Traffic light optimization using evolutionary algorithms. Project developed as part of bachelor's thesis.",
-    "project-1-link": "View on GitHub",
-    "project-2-title": "JNotepad++",
-    "project-2-desc": "Advanced text editor inspired by the Notepad++ application. Supports multiple languages, themes and additional features.",
-    "project-2-link": "View on GitHub",
-    "project-3-title": "JPaint",
-    "project-3-desc": "Graphics application for drawing and editing images. Implements various drawing tools and geometric objects.",
-    "project-3-link": "View on GitHub",
-    "project-4-title": "LCD-based E-Reader",
-    "project-4-desc": "E-book reader with LCD display developed on ESP32 microcontroller. Uses FreeRTOS for multitasking and supports navigation through text files.",
-    "project-4-link": "View on GitHub",
-    "project-5-title": "Snake Game",
-    "project-5-desc": "Classic Snake game implemented in C. Features collision detection, score tracking and growing gameplay.",
-    "project-5-link": "View on GitHub",
     "contact-title": "Contact",
     "hobbies-title": "Hobbies and Interests",
     "hobbies-text-1": "Besides watching series and movies (especially sitcoms and fantasy), I often play pub quizzes (and have tried organizing them). I love to travel, and I also enjoy playing guitar.",
-    "hobbies-text-2": "I tutor high school and elementary school students in STEM subjects."
+    "hobbies-text-2": "I tutor high school and elementary school students in STEM subjects.",
+    "projects": [
+        {
+            "title": "Evolutionary Computing",
+            "desc": "Traffic light optimization using evolutionary algorithms. Project developed as part of bachelor's thesis.",
+            "linkText": "View on GitHub",
+            "url": "https://github.com/mv54173/EvolutionaryComputing"
+        },
+        {
+            "title": "JNotepad++",
+            "desc": "Advanced text editor inspired by the Notepad++ application. Supports multiple languages, themes and additional features.",
+            "linkText": "View on GitHub",
+            "url": "https://github.com/mv54173/JNotepadPP"
+        },
+        {
+            "title": "JPaint",
+            "desc": "Graphics application for drawing and editing images. Implements various drawing tools and geometric objects.",
+            "linkText": "View on GitHub",
+            "url": "https://github.com/mv54173/JPaint"
+        },
+        {
+            "title": "LCD-based E-Reader",
+            "desc": "E-book reader with LCD display developed on ESP32 microcontroller. Uses FreeRTOS for multitasking and supports navigation through text files.",
+            "linkText": "View on GitHub",
+            "url": "https://github.com/mv54173/LCD-EReader"
+        },
+        {
+            "title": "Snake Game",
+            "desc": "Classic Snake game implemented in C. Features collision detection, score tracking and growing gameplay.",
+            "linkText": "View on GitHub",
+            "url": "https://github.com/mv54173/SnakeGame"
+        }
+    ]
 }

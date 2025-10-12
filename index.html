@@ -17,7 +17,7 @@
     <div class="mouse-follower"></div>
 
     <!-- Language Switch Button -->
-    <button id="lang-switch" class="lang-switch">EN</button>
+    <button id="lang-switch" class="lang-switch">EN / HR</button>
 
     <!-- Sidebar -->
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
@@ -83,16 +83,16 @@
         <div class="w3-content scroll-fade" style="margin-top: 60px;">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="10">0</div>
-                    <div class="stat-label" id="stat-1-label"></div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label" id="stat-1-label">+ Odigranih kvizova</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-target="150+">0</div>
-                    <div class="stat-label" id="stat-2-label"></div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label" id="stat-2-label">+ Posjećenih gradova</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-target="5">0</div>
-                    <div class="stat-label" id="stat-3-label"></div>
+                    <div class="stat-label" id="stat-3-label">Godina sviranja gitare</div>
                 </div>
             </div>
         </div>
@@ -284,32 +284,7 @@
                 </button>
 
                 <div class="project-track" id="projectTrack">
-                    <div id="project-data" style="display: none;">
-                        <div id="project-1-title">Evolutionary Computing</div>
-                        <div id="project-1-desc">Optimizacija prometnih semafora korištenjem evolucijskih algoritama.
-                            Projekt razvijen u sklopu završnog rada.</div>
-                        <div id="project-1-link">Pogledaj na GitHub</div>
-
-                        <div id="project-2-title">JNotepad++</div>
-                        <div id="project-2-desc">Napredni tekstualni editor inspiriran Notepad++ aplikacijom. Podržava
-                            više jezika, teme i dodatne funkcionalnosti.</div>
-                        <div id="project-2-link">Pogledaj na GitHub</div>
-
-                        <div id="project-3-title">JPaint</div>
-                        <div id="project-3-desc">Grafička aplikacija za crtanje i uređivanje slika. Implementira
-                            različite alate za crtanje i geometrijske objekte.</div>
-                        <div id="project-3-link">Pogledaj na GitHub</div>
-
-                        <div id="project-4-title">LCD-based E-Reader</div>
-                        <div id="project-4-desc">E-book čitač s LCD zaslonom razvijen na ESP32 mikrokontroleru. Koristi
-                            FreeRTOS za multitasking i podržava navigaciju kroz tekstualne datoteke.</div>
-                        <div id="project-4-link">Pogledaj na GitHub</div>
-
-                        <div id="project-5-title">Snake Game</div>
-                        <div id="project-5-desc">Klasična igrica Snake implementirana u C-u. Sadrži collision detection,
-                            score tracking i rastući gameplay.</div>
-                        <div id="project-5-link">Pogledaj na GitHub</div>
-                    </div>
+                    <!-- Projects will be loaded dynamically from language JSON -->
                 </div>
 
                 <button class="carousel-arrow right" onclick="moveCarousel(1)">

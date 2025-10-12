@@ -19,7 +19,7 @@
     "about-text-1": "Student sam završne godine diplomskog studija na FER-u gdje sam preddiplomski studij završio s odličnim uspjehom i velikom pohvalom (magna cum laude). Dolazim iz Međimurja, a rano sam djetinjstvo proveo u Sloveniji gdje sam rođen.",
     "about-text-2": "Marljiv sam i snalažljiv te se smatram prijateljski nastrojenom i otvorenom osobom. Stalno sam u potrazi za novim izazovima i rado prihvaćam pružene prilike.",
     "stat-1-label": "godina programiranja",
-    "stat-2-label": "odigranih i orginiziranih kvizova",
+    "stat-2-label": "odigranih i organiziranih kvizova",
     "stat-3-label": "državnih i međunarodnih natjecanja",
     "languages-title": "Jezici",
     "lang-english": "Engleski",
@@ -46,7 +46,7 @@
     "edu-4-desc": "Upisan po primitku nagrade \"Učenik generacije\" u Osnovnoj školi Nedelišće. Maturirao s odličnim uspjehom na višoj razini.",
     "edu-4-achievements": "ACSL - 4 sudjelovanja i 2 medalje | Geografija - 1. mjesto | Matematika, Infokup, Fizika - sudjelovanja",
     "experience-title": "Radno Iskustvo",
-    "more-title": "Više",
+    "more-title": "Više o meni",
     "exp-1-title": "Software Developer",
     "present-2": "danas",
     "exp-1-type": "studentski posao",
@@ -61,23 +61,40 @@
     "exp-3-job-1": "Uvod u programiranje (UPRO) - 10.2023 - 1.2024",
     "exp-3-job-2": "Digitalna logika - 10.2021 - 1.2022",
     "projects-title": "Projekti",
-    "project-1-title": "Evolutionary Computing",
-    "project-1-desc": "Optimizacija prometnih semafora korištenjem evolucijskih algoritama. Projekt razvijen u sklopu završnog rada.",
-    "project-1-link": "Pogledaj na GitHub",
-    "project-2-title": "JNotepad++",
-    "project-2-desc": "Napredni tekstualni editor inspiriran Notepad++ aplikacijom. Podržava više jezika, teme i dodatne funkcionalnosti.",
-    "project-2-link": "Pogledaj na GitHub",
-    "project-3-title": "JPaint",
-    "project-3-desc": "Grafička aplikacija za crtanje i uređivanje slika. Implementira različite alate za crtanje i geometrijske objekte.",
-    "project-3-link": "Pogledaj na GitHub",
-    "project-4-title": "LCD-based E-Reader",
-    "project-4-desc": "E-book čitač s LCD zaslonom razvijen na ESP32 mikrokontroleru. Koristi FreeRTOS za multitasking i podržava navigaciju kroz tekstualne datoteke.",
-    "project-4-link": "Pogledaj na GitHub",
-    "project-5-title": "Snake Game",
-    "project-5-desc": "Klasična igrica Snake implementirana u C-u. Sadrži collision detection, score tracking i rastući gameplay.",
-    "project-5-link": "Pogledaj na GitHub",
     "contact-title": "Kontakt",
     "hobbies-title": "Hobiji i interesi",
     "hobbies-text-1": "Osim gledanja serija i filmova (posebice sitcoma i fantasyja), često igram pub kvizove (a okušao sam se i u organizaciji). Volim putovati, a također rado sviram gitaru.",
-    "hobbies-text-2": "Pomažem učenicima srednjih i osnovnih škola pri učenju STEM predmeta."
+    "hobbies-text-2": "Pomažem učenicima srednjih i osnovnih škola pri učenju STEM predmeta.",
+    "projects": [
+        {
+            "title": "Evolutionary Computing",
+            "desc": "Optimizacija prometnih semafora korištenjem evolucijskih algoritama. Projekt razvijen u sklopu završnog rada.",
+            "linkText": "Pogledaj na GitHub",
+            "url": "https://github.com/mv54173/EvolutionaryComputing"
+        },
+        {
+            "title": "JNotepad++",
+            "desc": "Napredni tekstualni editor inspiriran Notepad++ aplikacijom. Podržava više jezika, teme i dodatne funkcionalnosti.",
+            "linkText": "Pogledaj na GitHub",
+            "url": "https://github.com/mv54173/JNotepadPP"
+        },
+        {
+            "title": "JPaint",
+            "desc": "Grafička aplikacija za crtanje i uređivanje slika. Implementira različite alate za crtanje i geometrijske objekte.",
+            "linkText": "Pogledaj na GitHub",
+            "url": "https://github.com/mv54173/JPaint"
+        },
+        {
+            "title": "LCD-based E-Reader",
+            "desc": "E-book čitač s LCD zaslonom razvijen na ESP32 mikrokontroleru. Koristi FreeRTOS za multitasking i podržava navigaciju kroz tekstualne datoteke.",
+            "linkText": "Pogledaj na GitHub",
+            "url": "https://github.com/mv54173/LCD-EReader"
+        },
+        {
+            "title": "Snake Game",
+            "desc": "Klasična igrica Snake implementirana u C-u. Sadrži collision detection, score tracking i rastući gameplay.",
+            "linkText": "Pogledaj na GitHub",
+            "url": "https://github.com/mv54173/SnakeGame"
+        }
+    ]
 }
