@@ -12,14 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Toggle between 'en' and 'hr'
         const newLang = currentLang === 'en' ? 'hr' : 'en';
 
+        console.log(newLang);
+
         // Save to localStorage
         localStorage.setItem('lang', newLang);
 
-        // Update current language
-        currentLang = newLang;
-
-        // Load new language
-        loadLanguage(newLang);
+        // Reload page to apply new language
+        location.reload();
     });
 });
 
@@ -47,6 +46,9 @@ function loadLanguage(lang) {
 
             // Update HTML lang attribute
             document.documentElement.lang = lang;
+
+            // Trigger custom event to notify other scripts that language has changed
+            document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
         })
         .catch(error => {
             console.error('Error loading language file:', error);
