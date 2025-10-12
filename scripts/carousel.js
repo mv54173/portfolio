@@ -3,6 +3,15 @@ let currentIndex = 0;
 let isAnimating = false;
 let projectData = [];
 
+// Project URLs (static, not translated)
+const projectUrls = [
+    'https://github.com/mv54173/EvolutionaryComputing',
+    'https://github.com/mv54173/JNotepadPP',
+    'https://github.com/mv54173/JPaint',
+    'https://github.com/mv54173/LCD-EReader',
+    'https://github.com/mv54173/SnakeGame'
+];
+
 // Load all projects from HTML
 function loadProjectData() {
     projectData = [];
@@ -14,13 +23,12 @@ function loadProjectData() {
 
         const descEl = document.getElementById(`project-${index}-desc`);
         const linkTextEl = document.getElementById(`project-${index}-link`);
-        const urlEl = document.getElementById(`project-${index}-url`);
 
         projectData.push({
             title: titleEl.textContent,
             desc: descEl ? descEl.textContent : '',
             linkText: linkTextEl ? linkTextEl.textContent : 'View',
-            url: urlEl ? urlEl.textContent : '#'
+            url: projectUrls[index - 1] || '#'
         });
 
         index++;
