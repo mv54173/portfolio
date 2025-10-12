@@ -14,11 +14,12 @@
     "nav-experience-mobile": "EXPERIENCE",
     "nav-more-mobile": "MORE",
     "nav-contact-mobile": "CONTACT",
-    "header-subtitle": "4th year FER student",
-    "header-description": "Computer Science | Programming | Backend Development",
+    "header-subtitle": "5th year student at FER",
+    "header-description": "Software Development | Problem Solving | World Exploration",
     "about-title": "About Me",
     "about-text-1": "I am a final year Master's student at FER, where I completed my undergraduate studies with magna cum laude honors. I come from Međimurje, and spent my early childhood in Slovenia where I was born.",
-    "about-text-2": "I am diligent and resourceful, and consider myself a friendly and open person. I am constantly looking for new challenges and eagerly embrace opportunities.",
+    "about-text-2": "Currently, I'm persuing a diploma in field of Computer Engineering. academic work revolves around computer security and solving optimization problems. Professionally, I’m interested in backend systems and embedded development.",
+    "about-text-3": "I am diligent and resourceful, and consider myself a friendly and open person. I am constantly looking for new challenges and eagerly embrace opportunities.",
     "languages-title": "Languages",
     "lang-english": "English",
     "lang-slovenian": "Slovenian",
@@ -36,38 +37,38 @@
     "hobbies-text-2": "I tutor high school and elementary school students in STEM subjects.",
     "stats": [
         {
-            "value": "7+",
+            "value": "10",
             "label": "years of programming"
         },
         {
-            "value": "100+",
+            "value": "150+",
             "label": "quizzes played and organized"
         },
         {
-            "value": "10+",
+            "value": "13",
             "label": "national and international competitions"
         }
     ],
     "skills": {
         "programming": [
             {
-                "name": "C/C++",
-                "level": 90
-            },
-            {
                 "name": "C#/.NET",
-                "level": 88
-            },
-            {
-                "name": "Python",
-                "level": 85
+                "level": 100
             },
             {
                 "name": "Java",
+                "level": 88
+            },
+            {
+                "name": "C/C++",
+                "level": 85
+            },
+            {
+                "name": "SQL",
                 "level": 80
             },
             {
-                "name": "JavaScript",
+                "name": "Python",
                 "level": 75
             }
         ],
@@ -78,38 +79,46 @@
             "Linux",
             "Visual Studio",
             "VS Code",
-            "PostgreSQL",
-            "R",
-            "Julia"
+            "PgAdmin",
+            "ESP-IDF",
+            "FreeRTOS",
+            "Nomad"
         ]
     },
     "education": [
         {
-            "institution": "Faculty of Electrical Engineering and Computing",
+            "institution": "Faculty of Economics and Tourism 'Dr. Mijo Mirković' - Pula",
+            "period": "2025 – present",
+            "degree": "Master of Economics",
+            "description": "This is an applied economics programm in which I enrolled to gain business and entrepreneurship skills.",
+            "courses": "Advanced Microeconomics | Game Theory | Behevioural Economics | Advanced Macroeconomics"
+        },
+        {
+            "institution": "Faculty of Electrical Engineering and Computing - Zagreb",
             "period": "2024 – present",
             "degree": "Master of Computer Engineering",
-            "description": "Master's student, major: Computer Engineering",
+            "description": "Gaining knowledge in wide range of areas: from hardware architecture and operating systems to application layers and services",
             "courses": "Embedded Computer Systems | Competitive Cybersecurity Skills | Design Patterns in Programming | Operating Systems for Embedded Computers"
         },
         {
-            "institution": "Faculty of Electrical Engineering and Computer Science",
+            "institution": "Faculty of Electrical Engineering and Computer Science - Maribor",
             "period": "9.2024 – 2.2025",
-            "degree": "Erasmus+ exchange, Maribor, Slovenia",
-            "courses": "Advanced Information Security | Evolutionary Computing | Video Game Development"
+            "degree": "This was an Erasmus+ exchange in Maribor, Slovenia where I gained international contacts and multicultural experience.",
+            "courses": "Advanced Information Security | Evolutionary Computing | Video Game Development in Java"
         },
         {
-            "institution": "Faculty of Electrical Engineering and Computing",
+            "institution": "Faculty of Electrical Engineering and Computing - Zagreb",
             "period": "2021 – 2024",
             "degree": "Bachelor of Computer Engineering",
-            "description": "Graduated in the top 5% of students with magna cum laude honors. Received STEM scholarship every year.",
-            "courses": "Thesis: Traffic Light Optimization using Evolutionary Algorithms"
+            "description": "Graduated in the top 5% of students with magna cum laude honors and received STEM scholarship every year.",
+            "courses": "<strong>Thesis:</strong> Traffic Light Optimization using Evolutionary Algorithms"
         },
         {
             "institution": "Prva gimnazija Varaždin",
             "period": "2017 – 2021",
             "degree": "Science-Math Gymnasium",
             "description": "Enrolled after receiving the \"Student of the Generation\" award at Nedelišće Elementary School. Graduated with excellent marks at higher level.",
-            "courses": "ACSL - 4 participations and 2 medals | Geography - 1st place | Mathematics, Infokup, Physics - participations"
+            "courses": "<strong>Comptetitions:</strong> ACSL - 4 participations and 2 medals | Geography - 1st place | Mathematics, Infokup, Physics - multiple participations"
         }
     ],
     "experience": [

@@ -14,11 +14,12 @@
     "nav-experience-mobile": "ISKUSTVO",
     "nav-more-mobile": "VIŠE",
     "nav-contact-mobile": "KONTAKT",
-    "header-subtitle": "Student 4. godine FER-a",
-    "header-description": "Računarstvo | Programiranje | Backend razvoj",
+    "header-subtitle": "Student 5. godine FER-a",
+    "header-description": "Programiranje | Rješavanje problema | Istraživanje svijeta",
     "about-title": "O Meni",
     "about-text-1": "Student sam završne godine diplomskog studija na FER-u gdje sam preddiplomski studij završio s odličnim uspjehom i velikom pohvalom (magna cum laude). Dolazim iz Međimurja, a rano sam djetinjstvo proveo u Sloveniji gdje sam rođen.",
-    "about-text-2": "Marljiv sam i snalažljiv te se smatram prijateljski nastrojenom i otvorenom osobom. Stalno sam u potrazi za novim izazovima i rado prihvaćam pružene prilike.",
+    "about-text-2": "Upisan sam na studij Računalnog inženjerstva. U akademskom radu fokusiran sam na sigurnost informacijskih sustava i rješavanje optimizacijskih problema. U praksi me najviše privlače backend tehnologije i razvoj učinkovitih embedded sustava.",
+    "about-text-3": "Marljiv sam i snalažljiv te se smatram prijateljski nastrojenom i otvorenom osobom. Stalno sam u potrazi za novim izazovima i rado prihvaćam pružene prilike.",
     "languages-title": "Jezici",
     "lang-english": "Engleski",
     "lang-slovenian": "Slovenski",
@@ -85,31 +86,38 @@
     },
     "education": [
         {
-            "institution": "Fakultet elektrotehnike i računarstva",
-            "period": "2024 – danas",
-            "degree": "Sveučilišni magistar inženjer računarstva",
-            "description": "Student diplomskog studija, modul: Računalno inženjerstvo",
-            "courses": "Ugradbeni računalni sustavi | Natjecateljske vještine u kibernetičkoj sigurnosti | Oblikovni obrasci u programiranju | Operacijski sustavi za ugrađena računala"
+            "institution": "Ekonomski i turistički fakultet 'Dr. Mijo Mirković' - Pula",
+            "period": "2025 – sada",
+            "degree": "Magistar ekonomije",
+            "description": "Ovo je primijenjeni program ekonomije na koji sam se upisao kako bih stekao poslovne i poduzetničke vještine.",
+            "courses": "Napredna mikroekonomija | Teorija igara | Ponašajna ekonomija | Napredna makroekonomija"
         },
         {
-            "institution": "Fakulteta za elektrotehniko, računalništvo in informatiko",
+            "institution": "Fakultet elektrotehnike i računarstva - Zagreb",
+            "period": "2024 – sada",
+            "degree": "Magistar računalnog inženjerstva",
+            "description": "Stječem znanje u širokom spektru područja: od arhitekture hardvera i operativnih sustava do aplikacijskih slojeva i servisa.",
+            "courses": "Ugrađeni računalni sustavi | Kompetitivne vještine kibernetičke sigurnosti | Dizajnerski obrasci u programiranju | Operativni sustavi za ugrađene računalne sustave"
+        },
+        {
+            "institution": "Fakultet elektrotehnike i računalništva - Maribor",
             "period": "9.2024 – 2.2025",
-            "degree": "Erasmus+ razmjena, Maribor, Slovenija",
-            "courses": "Napredna informacijska sigurnost | Evolucijsko računarstvo | Razvoj video igara"
+            "degree": "Ovo je bio Erasmus+ program razmjene u Mariboru, Slovenija, gdje sam stekao međunarodne kontakte i iskustvo u multikulturalnom okruženju.",
+            "courses": "Napredna informacijska sigurnost | Evolucijsko računarstvo | Razvoj videoigara u Javi"
         },
         {
-            "institution": "Fakultet elektrotehnike i računarstva",
+            "institution": "Fakultet elektrotehnike i računarstva - Zagreb",
             "period": "2021 – 2024",
-            "degree": "Sveučilišni prvostupnik inženjer računarstva",
-            "description": "Završio studij u top 5% najuspješnijih studenata s magna cum laude počastima. Svake godine dobitnik STEM stipendije.",
-            "courses": "Završni rad: Optimizacija prometnih semafora evolucijskim algoritmom"
+            "degree": "Prvostupnik računalnog inženjerstva",
+            "description": "Diplomirao među 5% najboljih studenata s pohvalama magna cum laude i primao STEM stipendiju svake godine.",
+            "courses": "<strong>Diplomski rad:</strong> Optimizacija semafora pomoću evolucijskih algoritama"
         },
         {
             "institution": "Prva gimnazija Varaždin",
             "period": "2017 – 2021",
             "degree": "Prirodoslovno-matematička gimnazija",
-            "description": "Upisan po primitku nagrade \"Učenik generacije\" u Osnovnoj školi Nedelišće. Maturirao s odličnim uspjehom na višoj razini.",
-            "courses": "ACSL - 4 sudjelovanja i 2 medalje | Geografija - 1. mjesto | Matematika, Infokup, Fizika - sudjelovanja"
+            "description": "Upisao nakon što sam primio nagradu 'Učenik generacije' u Osnovnoj školi Nedelišće. Diplomirao s izvrsnim ocjenama na višoj razini.",
+            "courses": "<strong>Natjecanja:</strong> ACSL - 4 sudjelovanja i 2 medalje | Geografija - 1. mjesto | Matematika, Infokup, Fizika - više sudjelovanja"
         }
     ],
     "experience": [
