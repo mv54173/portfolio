@@ -26,12 +26,6 @@ function initScrollAnimations() {
                         bar.classList.add('animated');
                     });
                 }
-
-                // Animate stat counters
-                const statNumbers = entry.target.querySelectorAll('.stat-number');
-                statNumbers.forEach(stat => {
-                    animateCounter(stat);
-                });
             }
         });
     }, observerOptions);
@@ -49,6 +43,11 @@ function initScrollAnimations() {
 
 // Counter animation
 function animateCounter(stat) {
+    // Prevent animation if already running
+    if (stat.dataset.animating === 'true') return;
+
+    stat.dataset.animating = 'true';
+
     const rawTarget = stat.getAttribute('data-target');
     const hasPlus = rawTarget.includes('+');
     const target = parseInt(rawTarget);
@@ -60,12 +59,23 @@ function animateCounter(stat) {
         if (current >= target) {
             stat.textContent = target + (hasPlus ? '+' : '');
             clearInterval(timer);
+            stat.dataset.animating = 'false';
         } else {
             stat.textContent = Math.floor(current);
         }
     }, 30);
 }
 
+// Initialize stat counters with hover effect
+function initStatCounters() {
+    document.querySelectorAll('.stat-item').forEach(item => {
+        const statNumber = item.querySelector('.stat-number');
+
+        item.addEventListener('mouseenter', () => {
+            animateCounter(statNumber);
+        });
+    });
+}
 
 // Smooth scroll for anchor links
 function initSmoothScroll() {
@@ -113,7 +123,15 @@ function initAllAnimations() {
     initSmoothScroll();
     initParallax();
     initTechBadges();
+
+    // Wait a bit for stats to be loaded from language.js
+    setTimeout(initStatCounters, 500);
 }
 
 // Run on page load
 document.addEventListener('DOMContentLoaded', initAllAnimations);
+
+// Re-init stat counters when language changes
+document.addEventListener('languageChanged', function () {
+    setTimeout(initStatCounters, 100);
+});
