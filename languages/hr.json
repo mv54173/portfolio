@@ -87,7 +87,7 @@
     },
     "education": [
         {
-            "institution": "Ekonomski i turistički fakultet 'Dr. Mijo Mirković' - Pula",
+            "institution": "Fakultet ekonomije i turizma 'Dr. Mijo Mirković'",
             "period": "2025 – sada",
             "degree": "Magistar ekonomije",
             "description": "Ovo je program primijenjene ekonomije na koji sam se upisao kako bih stekao poslovne i poduzetničke vještine.",
@@ -140,7 +140,7 @@
         {
             "icon": "fa-microchip",
             "title": "ByteLab Embedded Software Academy",
-            "period": "9.2024",
+            "period": "9.2025",
             "company": "Byte Lab",
             "type": "jednomjesečna praksa",
             "description": "Sudjelovao sam u intenzivnoj petotjednoj praksi fokusiranoj na embedded software. Tijekom programa izradio sam čitač e-knjiga temeljen na LCD-u u C-u koristeći ESP-IDF i FreeRTOS. Moj završni projekt nagrađen je kao najbolji.",

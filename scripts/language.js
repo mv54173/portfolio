@@ -146,9 +146,9 @@ function buildExperience(experience) {
                     <i class="fa fa-calendar fa-fw"></i> ${exp.period}
                 </p>
                 <p style="margin-top: 5px;"><strong>${exp.company}</strong></p>
+                <p style="margin-bottom: 5px;"><i>${exp.type}</i></p>
             </div>
             <div class="experience-body">
-                <p style="margin-bottom: 5px;"><span>${exp.type}</span></p>
                 <p>${exp.description}</p>
                 ${exp.tags ? `
                     <div class="experience-tags">
