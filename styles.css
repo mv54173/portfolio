@@ -32,6 +32,18 @@ h6 {
     transition: all 0.3s;
 }
 
+.w3-sidebar .w3-bar-item p {
+    text-align: center;
+    margin: 0;
+}
+
+.w3-sidebar .w3-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #main {
     margin-left: 120px;
 }
@@ -64,9 +76,14 @@ h6 {
     #myNavbar .w3-bar-item {
         flex: 0 0 auto;
         width: auto !important;
-        padding: 12px 20px !important;
-        display: inline-block;
+        min-width: fit-content;
+        padding: 12px 24px !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         font-size: 11px;
+        text-align: center;
+        white-space: nowrap;
     }
 
     /* Hide scrollbar but keep functionality */
