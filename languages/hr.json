@@ -1,5 +1,6 @@
 {
     "lang-switch": "EN",
+    "nav-home": "POČETNA",
     "nav-about": "O MENI",
     "nav-skills": "VJEŠTINE",
     "nav-education": "OBRAZOVANJE",
@@ -18,9 +19,6 @@
     "about-title": "O Meni",
     "about-text-1": "Student sam završne godine diplomskog studija na FER-u gdje sam preddiplomski studij završio s odličnim uspjehom i velikom pohvalom (magna cum laude). Dolazim iz Međimurja, a rano sam djetinjstvo proveo u Sloveniji gdje sam rođen.",
     "about-text-2": "Marljiv sam i snalažljiv te se smatram prijateljski nastrojenom i otvorenom osobom. Stalno sam u potrazi za novim izazovima i rado prihvaćam pružene prilike.",
-    "stat-1-label": "godina programiranja",
-    "stat-2-label": "odigranih i organiziranih kvizova",
-    "stat-3-label": "državnih i međunarodnih natjecanja",
     "languages-title": "Jezici",
     "lang-english": "Engleski",
     "lang-slovenian": "Slovenski",
@@ -29,42 +27,135 @@
     "programming-title": "Programski jezici",
     "tools-title": "Alati i Tehnologije",
     "education-title": "Obrazovanje",
-    "edu-1-title": "Fakultet elektrotehnike i računarstva",
-    "present-1": "danas",
-    "edu-1-degree": "Sveučilišni magistar inženjer računarstva",
-    "edu-1-desc": "Student diplomskog studija, modul: Računalno inženjerstvo",
-    "edu-1-courses": "Ugradbeni računalni sustavi | Natjecateljske vještine u kibernetičkoj sigurnosti | Oblikovni obrasci u programiranju | Operacijski sustavi za ugrađena računala",
-    "edu-2-title": "Fakulteta za elektrotehniko, računalništvo in informatiko",
-    "edu-2-degree": "Erasmus+ razmjena, Maribor, Slovenija",
-    "edu-2-courses": "Napredna informacijska sigurnost | Evolucijsko računarstvo | Razvoj video igara",
-    "edu-3-title": "Fakultet elektrotehnike i računarstva",
-    "edu-3-degree": "Sveučilišni prvostupnik inženjer računarstva",
-    "edu-3-desc": "Završio studij u top 5% najuspješnijih studenata s magna cum laude počastima. Svake godine dobitnik STEM stipendije.",
-    "edu-3-thesis": "Završni rad: Optimizacija prometnih semafora evolucijskim algoritmom",
-    "edu-4-title": "Prva gimnazija Varaždin",
-    "edu-4-degree": "Prirodoslovno-matematička gimnazija",
-    "edu-4-desc": "Upisan po primitku nagrade \"Učenik generacije\" u Osnovnoj školi Nedelišće. Maturirao s odličnim uspjehom na višoj razini.",
-    "edu-4-achievements": "ACSL - 4 sudjelovanja i 2 medalje | Geografija - 1. mjesto | Matematika, Infokup, Fizika - sudjelovanja",
     "experience-title": "Radno Iskustvo",
     "more-title": "Više o meni",
-    "exp-1-title": "Software Developer",
-    "present-2": "danas",
-    "exp-1-type": "studentski posao",
-    "exp-1-desc": "Dio sam backend tima gdje aktivno sudjelujem u izradi parkirnog sustava koji se koristi u više od pedeset hrvatskih i regionalnih gradova. Iza mene su 2 veća projekta: modernizacija sustava izračuna cijena za SMS platni kanal te integracijski projekt dvosmjerne naplate na parkirni aparatima sastavljen od više mirkoservisa.",
-    "exp-1-tech": "Tehnologije: C#/.NET, Docker, PL/SQL, GitHub",
-    "exp-2-title": "ByteLab Embedded Software Academy",
-    "exp-2-type": "jednomjesečna praksa",
-    "exp-2-desc": "Sudjelovao sam na intenzivnoj pettjednoj praksi fokusiranoj na embedded software. Tijekom programa izradio sam LCD-based e-book reader u C-u koristeći ESP-IDF i FreeRTOS. Moj završni projekt izabran je kao najbolji.",
-    "exp-3-title": "Demonstrator",
-    "exp-3-type": "povremeni studentski posao",
-    "exp-3-desc": "Pružao sam pomoć studentima i potporu asistentima u izvođenju laboratorijskih vježbi:",
-    "exp-3-job-1": "Uvod u programiranje (UPRO) - 10.2023 - 1.2024",
-    "exp-3-job-2": "Digitalna logika - 10.2021 - 1.2022",
     "projects-title": "Projekti",
     "contact-title": "Kontakt",
     "hobbies-title": "Hobiji i interesi",
     "hobbies-text-1": "Osim gledanja serija i filmova (posebice sitcoma i fantasyja), često igram pub kvizove (a okušao sam se i u organizaciji). Volim putovati, a također rado sviram gitaru.",
     "hobbies-text-2": "Pomažem učenicima srednjih i osnovnih škola pri učenju STEM predmeta.",
+    "stats": [
+        {
+            "value": "7+",
+            "label": "godina programiranja"
+        },
+        {
+            "value": "100+",
+            "label": "odigranih i organiziranih kvizova"
+        },
+        {
+            "value": "10+",
+            "label": "državnih i međunarodnih natjecanja"
+        }
+    ],
+    "skills": {
+        "programming": [
+            {
+                "name": "C/C++",
+                "level": 90
+            },
+            {
+                "name": "C#/.NET",
+                "level": 88
+            },
+            {
+                "name": "Python",
+                "level": 85
+            },
+            {
+                "name": "Java",
+                "level": 80
+            },
+            {
+                "name": "JavaScript",
+                "level": 75
+            }
+        ],
+        "tools": [
+            "Docker",
+            "Git/Github",
+            "Jira",
+            "Linux",
+            "Visual Studio",
+            "VS Code",
+            "PostgreSQL",
+            "R",
+            "Julia"
+        ]
+    },
+    "education": [
+        {
+            "institution": "Fakultet elektrotehnike i računarstva",
+            "period": "2024 – danas",
+            "degree": "Sveučilišni magistar inženjer računarstva",
+            "description": "Student diplomskog studija, modul: Računalno inženjerstvo",
+            "courses": "Ugradbeni računalni sustavi | Natjecateljske vještine u kibernetičkoj sigurnosti | Oblikovni obrasci u programiranju | Operacijski sustavi za ugrađena računala"
+        },
+        {
+            "institution": "Fakulteta za elektrotehniko, računalništvo in informatiko",
+            "period": "9.2024 – 2.2025",
+            "degree": "Erasmus+ razmjena, Maribor, Slovenija",
+            "courses": "Napredna informacijska sigurnost | Evolucijsko računarstvo | Razvoj video igara"
+        },
+        {
+            "institution": "Fakultet elektrotehnike i računarstva",
+            "period": "2021 – 2024",
+            "degree": "Sveučilišni prvostupnik inženjer računarstva",
+            "description": "Završio studij u top 5% najuspješnijih studenata s magna cum laude počastima. Svake godine dobitnik STEM stipendije.",
+            "courses": "Završni rad: Optimizacija prometnih semafora evolucijskim algoritmom"
+        },
+        {
+            "institution": "Prva gimnazija Varaždin",
+            "period": "2017 – 2021",
+            "degree": "Prirodoslovno-matematička gimnazija",
+            "description": "Upisan po primitku nagrade \"Učenik generacije\" u Osnovnoj školi Nedelišće. Maturirao s odličnim uspjehom na višoj razini.",
+            "courses": "ACSL - 4 sudjelovanja i 2 medalje | Geografija - 1. mjesto | Matematika, Infokup, Fizika - sudjelovanja"
+        }
+    ],
+    "experience": [
+        {
+            "icon": "fa-laptop",
+            "title": "Software Developer",
+            "period": "7.2024 – danas",
+            "company": "IPC d.o.o., Čakovec",
+            "type": "studentski posao",
+            "description": "Dio sam backend tima gdje aktivno sudjelujem u izradi parkirnog sustava koji se koristi u više od pedeset hrvatskih i regionalnih gradova. Iza mene su 2 veća projekta: modernizacija sustava izračuna cijena za SMS platni kanal te integracijski projekt dvosmjerne naplate na parkirni aparatima sastavljen od više mirkoservisa.",
+            "tags": [
+                "C#/.NET",
+                "Docker",
+                "PL/SQL",
+                "GitHub"
+            ]
+        },
+        {
+            "icon": "fa-microchip",
+            "title": "ByteLab Embedded Software Academy",
+            "period": "9.2024",
+            "company": "Byte Lab",
+            "type": "jednomjesečna praksa",
+            "description": "Sudjelovao sam na intenzivnoj pettjednoj praksi fokusiranoj na embedded software. Tijekom programa izradio sam LCD-based e-book reader u C-u koristeći ESP-IDF i FreeRTOS. Moj završni projekt izabran je kao najbolji.",
+            "tags": [
+                "ESP32",
+                "FreeRTOS",
+                "C",
+                "ESP-IDF",
+                "Git",
+                "CMake"
+            ]
+        },
+        {
+            "icon": "fa-graduation-cap",
+            "title": "Demonstrator",
+            "period": "2021 – 2024",
+            "company": "FER, Sveučilište u Zagrebu",
+            "type": "povremeni studentski posao",
+            "description": "Pružao sam pomoć studentima i potporu asistentima u izvođenju laboratorijskih vježbi:",
+            "list": [
+                "Uvod u programiranje (UPRO) - 10.2023 - 1.2024",
+                "Digitalna logika - 10.2021 - 1.2022"
+            ]
+        }
+    ],
     "projects": [
         {
             "title": "Evolutionary Computing",

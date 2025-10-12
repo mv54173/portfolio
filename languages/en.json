@@ -19,9 +19,6 @@
     "about-title": "About Me",
     "about-text-1": "I am a final year Master's student at FER, where I completed my undergraduate studies with magna cum laude honors. I come from Međimurje, and spent my early childhood in Slovenia where I was born.",
     "about-text-2": "I am diligent and resourceful, and consider myself a friendly and open person. I am constantly looking for new challenges and eagerly embrace opportunities.",
-    "stat-1-label": "years of programming",
-    "stat-2-label": "quizzes played and organized",
-    "stat-3-label": "national and international competitions",
     "languages-title": "Languages",
     "lang-english": "English",
     "lang-slovenian": "Slovenian",
@@ -30,42 +27,135 @@
     "programming-title": "Programming Languages",
     "tools-title": "Tools and Technologies",
     "education-title": "Education",
-    "edu-1-title": "Faculty of Electrical Engineering and Computing",
-    "present-1": "present",
-    "edu-1-degree": "Master of Computer Engineering",
-    "edu-1-desc": "Master's student, major: Computer Engineering",
-    "edu-1-courses": "Embedded Computer Systems | Competitive Cybersecurity Skills | Design Patterns in Programming | Operating Systems for Embedded Computers",
-    "edu-2-title": "Faculty of Electrical Engineering and Computer Science",
-    "edu-2-degree": "Erasmus+ exchange, Maribor, Slovenia",
-    "edu-2-courses": "Advanced Information Security | Evolutionary Computing | Video Game Development",
-    "edu-3-title": "Faculty of Electrical Engineering and Computing",
-    "edu-3-degree": "Bachelor of Computer Engineering",
-    "edu-3-desc": "Graduated in the top 5% of students with magna cum laude honors. Received STEM scholarship every year.",
-    "edu-3-thesis": "Thesis: Traffic Light Optimization using Evolutionary Algorithms",
-    "edu-4-title": "Prva gimnazija Varaždin",
-    "edu-4-degree": "Science-Math Gymnasium",
-    "edu-4-desc": "Enrolled after receiving the \"Student of the Generation\" award at Nedelišće Elementary School. Graduated with excellent marks at higher level.",
-    "edu-4-achievements": "ACSL - 4 participations and 2 medals | Geography - 1st place | Mathematics, Infokup, Physics - participations",
     "experience-title": "Work Experience",
     "more-title": "More About Me",
-    "exp-1-title": "Software Developer",
-    "present-2": "present",
-    "exp-1-type": "student job",
-    "exp-1-desc": "I am part of the backend team actively contributing to the development of a parking system used in over fifty Croatian and regional cities. I have completed 2 major projects: modernization of the price calculation system for SMS payment channel and an integration project for two-way payment on parking meters consisting of multiple microservices.",
-    "exp-1-tech": "Technologies: C#/.NET, Docker, PL/SQL, GitHub",
-    "exp-2-title": "ByteLab Embedded Software Academy",
-    "exp-2-type": "one-month internship",
-    "exp-2-desc": "I participated in an intensive five-week internship focused on embedded software. During the program, I built an LCD-based e-book reader in C using ESP-IDF and FreeRTOS. My final project was selected as the best.",
-    "exp-3-title": "Teaching Assistant",
-    "exp-3-type": "part-time student job",
-    "exp-3-desc": "Provided assistance to students and support to instructors in conducting lab exercises:",
-    "exp-3-job-1": "Introduction to Programming (UPRO) - 10.2023 - 1.2024",
-    "exp-3-job-2": "Digital Logic - 10.2021 - 1.2022",
     "projects-title": "Projects",
     "contact-title": "Contact",
     "hobbies-title": "Hobbies and Interests",
     "hobbies-text-1": "Besides watching series and movies (especially sitcoms and fantasy), I often play pub quizzes (and have tried organizing them). I love to travel, and I also enjoy playing guitar.",
     "hobbies-text-2": "I tutor high school and elementary school students in STEM subjects.",
+    "stats": [
+        {
+            "value": "7+",
+            "label": "years of programming"
+        },
+        {
+            "value": "100+",
+            "label": "quizzes played and organized"
+        },
+        {
+            "value": "10+",
+            "label": "national and international competitions"
+        }
+    ],
+    "skills": {
+        "programming": [
+            {
+                "name": "C/C++",
+                "level": 90
+            },
+            {
+                "name": "C#/.NET",
+                "level": 88
+            },
+            {
+                "name": "Python",
+                "level": 85
+            },
+            {
+                "name": "Java",
+                "level": 80
+            },
+            {
+                "name": "JavaScript",
+                "level": 75
+            }
+        ],
+        "tools": [
+            "Docker",
+            "Git/Github",
+            "Jira",
+            "Linux",
+            "Visual Studio",
+            "VS Code",
+            "PostgreSQL",
+            "R",
+            "Julia"
+        ]
+    },
+    "education": [
+        {
+            "institution": "Faculty of Electrical Engineering and Computing",
+            "period": "2024 – present",
+            "degree": "Master of Computer Engineering",
+            "description": "Master's student, major: Computer Engineering",
+            "courses": "Embedded Computer Systems | Competitive Cybersecurity Skills | Design Patterns in Programming | Operating Systems for Embedded Computers"
+        },
+        {
+            "institution": "Faculty of Electrical Engineering and Computer Science",
+            "period": "9.2024 – 2.2025",
+            "degree": "Erasmus+ exchange, Maribor, Slovenia",
+            "courses": "Advanced Information Security | Evolutionary Computing | Video Game Development"
+        },
+        {
+            "institution": "Faculty of Electrical Engineering and Computing",
+            "period": "2021 – 2024",
+            "degree": "Bachelor of Computer Engineering",
+            "description": "Graduated in the top 5% of students with magna cum laude honors. Received STEM scholarship every year.",
+            "courses": "Thesis: Traffic Light Optimization using Evolutionary Algorithms"
+        },
+        {
+            "institution": "Prva gimnazija Varaždin",
+            "period": "2017 – 2021",
+            "degree": "Science-Math Gymnasium",
+            "description": "Enrolled after receiving the \"Student of the Generation\" award at Nedelišće Elementary School. Graduated with excellent marks at higher level.",
+            "courses": "ACSL - 4 participations and 2 medals | Geography - 1st place | Mathematics, Infokup, Physics - participations"
+        }
+    ],
+    "experience": [
+        {
+            "icon": "fa-laptop",
+            "title": "Software Developer",
+            "period": "7.2024 – present",
+            "company": "IPC d.o.o., Čakovec",
+            "type": "student job",
+            "description": "I am part of the backend team actively contributing to the development of a parking system used in over fifty Croatian and regional cities. I have completed 2 major projects: modernization of the price calculation system for SMS payment channel and an integration project for two-way payment on parking meters consisting of multiple microservices.",
+            "tags": [
+                "C#/.NET",
+                "Docker",
+                "PL/SQL",
+                "GitHub"
+            ]
+        },
+        {
+            "icon": "fa-microchip",
+            "title": "ByteLab Embedded Software Academy",
+            "period": "9.2024",
+            "company": "Byte Lab",
+            "type": "one-month internship",
+            "description": "I participated in an intensive five-week internship focused on embedded software. During the program, I built an LCD-based e-book reader in C using ESP-IDF and FreeRTOS. My final project was selected as the best.",
+            "tags": [
+                "ESP32",
+                "FreeRTOS",
+                "C",
+                "ESP-IDF",
+                "Git",
+                "CMake"
+            ]
+        },
+        {
+            "icon": "fa-graduation-cap",
+            "title": "Teaching Assistant",
+            "period": "2021 – 2024",
+            "company": "FER, University of Zagreb",
+            "type": "part-time student job",
+            "description": "Provided assistance to students and support to instructors in conducting lab exercises:",
+            "list": [
+                "Introduction to Programming (UPRO) - 10.2023 - 1.2024",
+                "Digital Logic - 10.2021 - 1.2022"
+            ]
+        }
+    ],
     "projects": [
         {
             "title": "Evolutionary Computing",
