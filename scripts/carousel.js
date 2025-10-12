@@ -4,13 +4,13 @@ let isAnimating = false;
 let projectData = [];
 
 // Project URLs (static, not translated)
-const projectUrls = [
-    'https://github.com/mv54173/EvolutionaryComputing',
-    'https://github.com/mv54173/JNotepadPP',
-    'https://github.com/mv54173/JPaint',
-    'https://github.com/mv54173/LCD-EReader',
-    'https://github.com/mv54173/SnakeGame'
-];
+const projectUrls = {
+    1: 'https://github.com/mv54173/EvolutionaryComputing',
+    2: 'https://github.com/mv54173/JNotepadPP',
+    3: 'https://github.com/mv54173/JPaint',
+    4: 'https://github.com/mv54173/LCD-EReader',
+    5: 'https://github.com/mv54173/SnakeGame'
+};
 
 // Load all projects from HTML
 function loadProjectData() {
@@ -28,13 +28,13 @@ function loadProjectData() {
             title: titleEl.textContent,
             desc: descEl ? descEl.textContent : '',
             linkText: linkTextEl ? linkTextEl.textContent : 'View',
-            url: projectUrls[index - 1] || '#'
+            url: projectUrls[index] || '#'
         });
 
         index++;
     }
 
-    console.log(`Loaded ${projectData.length} projects`);
+    console.log(`Loaded ${projectData.length} projects`, projectData);
     return projectData.length;
 }
 
@@ -80,9 +80,14 @@ function createProjectCard(dataIndex, position) {
 // Render the carousel (shows 3 cards: prev, current, next)
 function renderCarousel() {
     const track = document.getElementById('projectTrack');
-    if (!track || projectData.length === 0) return;
+    if (!track || projectData.length === 0) {
+        console.error('Cannot render carousel: track not found or no projects');
+        return;
+    }
 
-    track.innerHTML = '';
+    // Clear existing cards (but keep the hidden data div)
+    const existingCards = track.querySelectorAll('.project-card');
+    existingCards.forEach(card => card.remove());
 
     const prevIndex = getCircularIndex(currentIndex - 1);
     const currIndex = currentIndex;
@@ -116,8 +121,11 @@ function moveCarousel(direction) {
         // Update index
         currentIndex = getCircularIndex(currentIndex + direction);
 
-        // Render new cards
-        track.innerHTML = '';
+        // Remove old cards
+        const oldCards = track.querySelectorAll('.project-card');
+        oldCards.forEach(card => card.remove());
+
+        // Create new cards
         const prevIndex = getCircularIndex(currentIndex - 1);
         const currIndex = currentIndex;
         const nextIndex = getCircularIndex(currentIndex + 1);
@@ -171,20 +179,28 @@ function initKeyboardNav() {
 
 // Reload carousel when language changes
 document.addEventListener('languageChanged', function () {
-    const count = loadProjectData();
-    if (count > 0) {
-        currentIndex = 0;
-        renderCarousel();
-    }
+    console.log('Language changed, reloading projects');
+    setTimeout(() => {
+        const count = loadProjectData();
+        if (count > 0) {
+            currentIndex = 0;
+            renderCarousel();
+        }
+    }, 100);
 });
 
 // Initialize carousel on page load
 document.addEventListener('DOMContentLoaded', function () {
-    const count = loadProjectData();
-    if (count > 0) {
-        renderCarousel();
-        initKeyboardNav();
-    } else {
-        console.warn('No projects found');
-    }
+    console.log('DOM loaded, initializing carousel');
+
+    // Small delay to ensure language.js has run
+    setTimeout(() => {
+        const count = loadProjectData();
+        if (count > 0) {
+            renderCarousel();
+            initKeyboardNav();
+        } else {
+            console.error('No projects found! Check HTML structure.');
+        }
+    }, 100);
 });
