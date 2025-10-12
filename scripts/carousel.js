@@ -1,70 +1,43 @@
+// Project carousel functionality
 let currentIndex = 0;
 let isAnimating = false;
-const track = document.getElementById('projectTrack');
+let projectData = [];
 
-// Project data structure
-const projectData = [
-    {
-        title: '',
-        desc: '',
-        link: 'https://github.com/mv54173/EvolutionaryComputing',
-        linkText: ''
-    },
-    {
-        title: '',
-        desc: '',
-        link: 'https://github.com/mv54173/JNotepadPP',
-        linkText: ''
-    },
-    {
-        title: '',
-        desc: '',
-        link: 'https://github.com/mv54173/JPaint',
-        linkText: ''
-    },
-    {
-        title: '',
-        desc: '',
-        link: 'https://github.com/mv54173/LCD-EReader',
-        linkText: ''
-    },
-    {
-        title: '',
-        desc: '',
-        link: 'https://github.com/mv54173/SnakeGame',
-        linkText: ''
-    }
-];
-
-// Load project data from hidden elements
+// Load all projects from HTML
 function loadProjectData() {
-    const project1Title = document.getElementById('project-1-title');
-    const project2Title = document.getElementById('project-2-title');
-    const project3Title = document.getElementById('project-3-title');
+    projectData = [];
+    let index = 1;
 
-    if (project1Title) {
-        projectData[0].title = project1Title.textContent;
-        projectData[0].desc = document.getElementById('project-1-desc').textContent;
-        projectData[0].linkText = document.getElementById('project-1-link').textContent;
+    while (true) {
+        const titleEl = document.getElementById(`project-${index}-title`);
+        if (!titleEl) break;
 
-        projectData[1].title = project2Title.textContent;
-        projectData[1].desc = document.getElementById('project-2-desc').textContent;
-        projectData[1].linkText = document.getElementById('project-2-link').textContent;
+        const descEl = document.getElementById(`project-${index}-desc`);
+        const linkTextEl = document.getElementById(`project-${index}-link`);
+        const urlEl = document.getElementById(`project-${index}-url`);
 
-        projectData[2].title = project3Title.textContent;
-        projectData[2].desc = document.getElementById('project-3-desc').textContent;
-        projectData[2].linkText = document.getElementById('project-3-link').textContent;
+        projectData.push({
+            title: titleEl.textContent,
+            desc: descEl ? descEl.textContent : '',
+            linkText: linkTextEl ? linkTextEl.textContent : 'View',
+            url: urlEl ? urlEl.textContent : '#'
+        });
+
+        index++;
     }
+
+    console.log(`Loaded ${projectData.length} projects`);
+    return projectData.length;
 }
 
-// Get circular index (wraps around)
+// Get circular index
 function getCircularIndex(index) {
     const len = projectData.length;
     return ((index % len) + len) % len;
 }
 
-// Create project card element
-function createCard(dataIndex, position) {
+// Create a project card
+function createProjectCard(dataIndex, position) {
     const project = projectData[dataIndex];
     const card = document.createElement('div');
     card.className = 'project-card';
@@ -78,21 +51,17 @@ function createCard(dataIndex, position) {
             <h3>${project.title}</h3>
             <p>${project.desc}</p>
         </div>
-        <a href="${project.link}" target="_blank" class="project-link">
+        <a href="${project.url}" target="_blank" class="project-link">
             <i class="fa fa-github"></i>
             <span>${project.linkText}</span>
         </a>
     `;
 
-    // Add click handler for non-active cards
+    // Click inactive cards to navigate
     if (position !== 1) {
         card.addEventListener('click', (e) => {
             if (!e.target.closest('.project-link')) {
-                if (position === 0) {
-                    moveCarousel(-1);
-                } else if (position === 2) {
-                    moveCarousel(1);
-                }
+                moveCarousel(position === 0 ? -1 : 1);
             }
         });
     }
@@ -100,75 +69,74 @@ function createCard(dataIndex, position) {
     return card;
 }
 
-// Render carousel with current state
-function renderCarousel(animate = false) {
+// Render the carousel (shows 3 cards: prev, current, next)
+function renderCarousel() {
+    const track = document.getElementById('projectTrack');
+    if (!track || projectData.length === 0) return;
+
+    track.innerHTML = '';
+
     const prevIndex = getCircularIndex(currentIndex - 1);
     const currIndex = currentIndex;
     const nextIndex = getCircularIndex(currentIndex + 1);
 
-    const order = [prevIndex, currIndex, nextIndex];
-
-    if (animate) {
-        const cards = track.querySelectorAll('.project-card');
-        cards.forEach(card => card.classList.add('transitioning'));
-
-        setTimeout(() => {
-            track.innerHTML = '';
-            order.forEach((dataIndex, position) => {
-                track.appendChild(createCard(dataIndex, position));
-            });
-            isAnimating = false;
-        }, 50);
-    } else {
-        track.innerHTML = '';
-        order.forEach((dataIndex, position) => {
-            track.appendChild(createCard(dataIndex, position));
-        });
-    }
+    track.appendChild(createProjectCard(prevIndex, 0));
+    track.appendChild(createProjectCard(currIndex, 1));
+    track.appendChild(createProjectCard(nextIndex, 2));
 }
 
-// Move carousel in specified direction
+// Move carousel left (-1) or right (1)
 function moveCarousel(direction) {
-    if (isAnimating) return;
+    if (isAnimating || projectData.length === 0) return;
     isAnimating = true;
 
+    const track = document.getElementById('projectTrack');
     const cards = track.querySelectorAll('.project-card');
 
     // Animate out
-    if (direction === 1) {
-        cards.forEach(card => {
-            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    cards.forEach(card => {
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        if (direction === 1) {
             card.style.transform = 'translateX(-430px) scale(0.85)';
-            card.style.opacity = '0';
-        });
-    } else {
-        cards.forEach(card => {
-            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        } else {
             card.style.transform = 'translateX(430px) scale(0.85)';
-            card.style.opacity = '0';
-        });
-    }
+        }
+        card.style.opacity = '0';
+    });
 
-    // Update index and render new cards
     setTimeout(() => {
+        // Update index
         currentIndex = getCircularIndex(currentIndex + direction);
-        renderCarousel(false);
 
-        const newCards = track.querySelectorAll('.project-card');
+        // Render new cards
+        track.innerHTML = '';
+        const prevIndex = getCircularIndex(currentIndex - 1);
+        const currIndex = currentIndex;
+        const nextIndex = getCircularIndex(currentIndex + 1);
 
-        // Reset position for animation
-        newCards.forEach(card => {
+        const prevCard = createProjectCard(prevIndex, 0);
+        const currCard = createProjectCard(currIndex, 1);
+        const nextCard = createProjectCard(nextIndex, 2);
+
+        // Position them off-screen
+        [prevCard, currCard, nextCard].forEach(card => {
             card.style.transition = 'none';
-            card.style.transform = direction === 1 ?
-                'translateX(430px) scale(0.85)' :
-                'translateX(-430px) scale(0.85)';
+            if (direction === 1) {
+                card.style.transform = 'translateX(430px) scale(0.85)';
+            } else {
+                card.style.transform = 'translateX(-430px) scale(0.85)';
+            }
             card.style.opacity = '0';
         });
+
+        track.appendChild(prevCard);
+        track.appendChild(currCard);
+        track.appendChild(nextCard);
 
         // Animate in
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-                newCards.forEach((card) => {
+                [prevCard, currCard, nextCard].forEach(card => {
                     card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
                     card.style.transform = '';
                     card.style.opacity = '';
@@ -183,7 +151,7 @@ function moveCarousel(direction) {
 }
 
 // Keyboard navigation
-function initCarouselKeyboard() {
+function initKeyboardNav() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             moveCarousel(-1);
@@ -193,21 +161,22 @@ function initCarouselKeyboard() {
     });
 }
 
-// Initialize carousel
-function initCarousel() {
-    if (!track) return;
-
-    loadProjectData();
-    renderCarousel();
-    initCarouselKeyboard();
-}
-
-// Reload carousel data when language changes
+// Reload carousel when language changes
 document.addEventListener('languageChanged', function () {
-    if (!track) return;
-    loadProjectData();
-    renderCarousel(false);
+    const count = loadProjectData();
+    if (count > 0) {
+        currentIndex = 0;
+        renderCarousel();
+    }
 });
 
-// Run on page load
-document.addEventListener('DOMContentLoaded', initCarousel);
+// Initialize carousel on page load
+document.addEventListener('DOMContentLoaded', function () {
+    const count = loadProjectData();
+    if (count > 0) {
+        renderCarousel();
+        initKeyboardNav();
+    } else {
+        console.warn('No projects found');
+    }
+});
